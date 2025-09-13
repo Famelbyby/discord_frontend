@@ -1,0 +1,12 @@
+.friends-header {
+    display: flex;
+
+    &__item {
+        display: flex;
+        column-gap: 5px;
+
+        &_selected {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    }
+}
