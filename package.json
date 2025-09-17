@@ -10,11 +10,11 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.ts": [
+    "*.ts(x)": [
         "eslint --fix",
         "prettier --write"
     ],
-    "*.scss": "prettier --write"
+    "*.(s)css": "prettier --write"
   },
   "dependencies": {
     "next": "15.5.2",
