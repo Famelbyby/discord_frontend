@@ -23,6 +23,8 @@ export default function SearchInput({
 			{title}
 			<div className="search-input">
 				<Image
+					width={16}
+					height={16}
 					className="search-input__magnifier"
 					src="/shared/magnifier.png"
 					alt=""
