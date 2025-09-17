@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from "react";
-import FriendsHeader from "./ui/header"
+import FriendsHeader from "../../src/core/friends/friend.header"
 import { HeaderTitle } from "../utils/friends/types";
 
 export default function FriendsLayout({
