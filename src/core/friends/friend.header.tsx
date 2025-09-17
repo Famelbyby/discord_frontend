@@ -2,7 +2,7 @@
 
 import { HeaderTitle } from '@/app/utils/friends/types';
 import Image from 'next/image';
-import './friends.style.scss';
+import '../../styles/friends.style.scss';
 import Link from 'next/link';
 
 type HeaderProps = {
