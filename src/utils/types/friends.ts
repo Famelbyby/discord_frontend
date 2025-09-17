@@ -1,4 +1,8 @@
-export type FriendsHeaderTitle = 'Поиск' | 'Друзья' | 'Входящие заявки' | 'Исходящие заявки';
+export type FriendsHeaderTitle =
+    | 'Поиск'
+    | 'Друзья'
+    | 'Входящие заявки'
+    | 'Исходящие заявки';
 
 export type Friend = {
     id: string;
@@ -8,4 +12,4 @@ export type Friend = {
     isIncoming: boolean;
     isOutcoming: boolean;
     isBlocked: boolean;
-}
+};
