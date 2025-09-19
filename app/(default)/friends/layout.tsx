@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import FriendsHeader from '../../src/core/friends/friend.header';
-import { FriendsHeaderTitle } from '../../src/utils/types/friends';
+import FriendsHeader from '../../../src/core/friends/friend.header';
+import { FriendsHeaderTitle } from '../../../src/utils/types/friends';
 
 export default function FriendsLayout({
 	children,
