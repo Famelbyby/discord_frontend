@@ -1,4 +1,4 @@
-import { SidebarItemProps } from '../core/sidebar/sidebar.item';
+import { SidebarItemProps } from '../../core/sidebar/sidebar.item';
 
 export const SidebarListMock: SidebarItemProps[] = [
 	{

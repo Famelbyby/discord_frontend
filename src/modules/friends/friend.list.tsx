@@ -1,6 +1,6 @@
 import { Friend } from '@/src/utils/types/friends';
 import FriendItem from './friend.item';
-import { FriendsListMock } from '@/src/mocks/friends';
+import { FriendsListMock } from '@/src/mocks/friends/friends';
 
 export default function FriendList() {
 	const friends: Friend[] = FriendsListMock;

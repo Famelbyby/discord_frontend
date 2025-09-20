@@ -5,7 +5,7 @@ type SearchProps = {
 	title: string;
 	placeholder: string;
 	value: string;
-	changeValue: (value: string) => void;
+	changeValue: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export default function SearchInput({
@@ -14,10 +14,6 @@ export default function SearchInput({
 	value,
 	changeValue,
 }: SearchProps) {
-	function onChangeInput(event: React.ChangeEvent<HTMLInputElement>) {
-		changeValue(event.target.value);
-	}
-
 	return (
 		<div className="search-wrapper">
 			{title}
@@ -33,7 +29,7 @@ export default function SearchInput({
 					className="search-input__input"
 					type="text"
 					value={value}
-					onChange={onChangeInput}
+					onChange={changeValue}
 					placeholder={placeholder}
 				/>
 			</div>
