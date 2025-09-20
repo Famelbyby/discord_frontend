@@ -1,4 +1,4 @@
-import { Friend } from '../utils/types/friends/friends';
+import { Friend } from '@/src/utils/types/friends/friends';
 
 export const FriendsListMock: Friend[] = [
 	{

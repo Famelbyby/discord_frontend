@@ -37,14 +37,14 @@ function NotFriendActions({ friend }: FriendItemProps) {
 				<>
 					<Image
 						width={IMAGE_WIDTH}
-						height={IMAGE_HEIGTH}
+						height={IMAGE_HEIGHT}
 						className="friend-actions__img"
 						src="/shared/confirm.png"
 						alt="Принять"
 					/>
 					<Image
 						width={IMAGE_WIDTH}
-						height={IMAGE_HEIGTH}
+						height={IMAGE_HEIGHT}
 						className="friend-actions__img"
 						src="/shared/reject.png"
 						alt="Отклонить"
@@ -53,7 +53,7 @@ function NotFriendActions({ friend }: FriendItemProps) {
 			) : friend.isOutcoming ? (
 				<Image
 					width={IMAGE_WIDTH}
-					height={IMAGE_HEIGTH}
+					height={IMAGE_HEIGHT}
 					className="friend-actions__img"
 					src="/shared/cross.png"
 					alt="Отменить"
@@ -61,7 +61,7 @@ function NotFriendActions({ friend }: FriendItemProps) {
 			) : (
 				<Image
 					width={IMAGE_WIDTH}
-					height={IMAGE_HEIGTH}
+					height={IMAGE_HEIGHT}
 					className="friend-actions__img"
 					src="/shared/add-friend.png"
 					alt="Добавить"
@@ -69,7 +69,7 @@ function NotFriendActions({ friend }: FriendItemProps) {
 			)}
 			<Image
 				width={IMAGE_WIDTH}
-				height={IMAGE_HEIGTH}
+				height={IMAGE_HEIGHT}
 				className="friend-actions__img"
 				src="/shared/block.png"
 				alt="Заблокировать"
@@ -86,7 +86,7 @@ export default function FriendItem({ friend }: FriendItemProps) {
 					width={AVATAR_WIDTH}
 					height={AVATAR_HEIGHT}
 					className="friend-avatar__img"
-					src={friend.avatarUrl}
+					src={'/friends/friends.png'}
 					alt=""
 				/>
 				<div className="friend-avatar__name">{friend.name}</div>

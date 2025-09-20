@@ -1,6 +1,6 @@
 import { Friend } from '@/src/utils/types/friends/friends';
 import FriendItem from './friend.item';
-import { FriendsListMock } from '@/src/mocks/friends';
+import { FriendsListMock } from '@/src/mocks/friends/friends';
 import '@/src/styles/friends/friend.list.style.scss';
 
 export default function FriendList() {
