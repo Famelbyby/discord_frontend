@@ -5,26 +5,37 @@ type FriendItemProps = {
 	friend: Friend;
 };
 
+const IMAGE_WIDTH = 20;
+const IMAGE_HEIGTH = 20;
+
 function FriendActions() {
 	return (
 		<>
 			<Image
-				className="friend-actions__chat"
+				width={IMAGE_WIDTH}
+				height={IMAGE_HEIGTH}
+				className="friend-actions__img"
 				src="/shared/chat.png"
 				alt="Написать"
 			/>
 			<Image
-				className="friend-actions__call"
+				width={IMAGE_WIDTH}
+				height={IMAGE_HEIGTH}
+				className="friend-actions__img"
 				src="/shared/call.png"
 				alt="Позвонить"
 			/>
 			<Image
-				className="friend-actions__delete"
+				width={IMAGE_WIDTH}
+				height={IMAGE_HEIGTH}
+				className="friend-actions__img"
 				src="/shared/cross.png"
 				alt="Удалить"
 			/>
 			<Image
-				className="friend-actions__block"
+				width={IMAGE_WIDTH}
+				height={IMAGE_HEIGTH}
+				className="friend-actions__img"
 				src="/shared/block.png"
 				alt="Заблокировать"
 			/>
@@ -38,31 +49,41 @@ function NotFriendActions({ friend }: FriendItemProps) {
 			{friend.isIncoming ? (
 				<>
 					<Image
-						className="friend-actions__reject"
+						width={IMAGE_WIDTH}
+						height={IMAGE_HEIGTH}
+						className="friend-actions__img"
 						src="/shared/reject.png"
 						alt="Отклонить"
 					/>
 					<Image
-						className="friend-actions__confirm"
+						width={IMAGE_WIDTH}
+						height={IMAGE_HEIGTH}
+						className="friend-actions__img"
 						src="/shared/confirm.png"
 						alt="Принять"
 					/>
 				</>
 			) : friend.isOutcoming ? (
 				<Image
-					className="friend-actions__cancel"
+					width={IMAGE_WIDTH}
+					height={IMAGE_HEIGTH}
+					className="friend-actions__img"
 					src="/shared/cross.png"
 					alt="Отменить"
 				/>
 			) : (
 				<Image
-					className="friend-actions__add-friend"
+					width={IMAGE_WIDTH}
+					height={IMAGE_HEIGTH}
+					className="friend-actions__img"
 					src="/shared/add-friend.png"
 					alt="Добавить"
 				/>
 			)}
 			<Image
-				className="friend-actions__block"
+				width={IMAGE_WIDTH}
+				height={IMAGE_HEIGTH}
+				className="friend-actions__img"
 				src="/shared/block.png"
 				alt="Заблокировать"
 			/>
@@ -75,18 +96,20 @@ export default function FriendItem({ friend }: FriendItemProps) {
 		<div className="friend-item">
 			<div className="friend-avatar">
 				<Image
+					width={50}
+					height={50}
 					className="friend-avatar__img"
-					src={friend.avatar}
+					src={friend.avatarUrl}
 					alt=""
 				/>
 				<div className="friend-avatar__name">{friend.name}</div>
-				<div className="friend-actions">
-					{friend.isFriend ? (
-						<FriendActions />
-					) : (
-						<NotFriendActions friend={friend} />
-					)}
-				</div>
+			</div>
+			<div className="friend-actions">
+				{friend.isFriend ? (
+					<FriendActions />
+				) : (
+					<NotFriendActions friend={friend} />
+				)}
 			</div>
 		</div>
 	);

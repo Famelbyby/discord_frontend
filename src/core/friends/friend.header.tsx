@@ -1,17 +1,14 @@
 'use client';
 
-import { HeaderTitle } from '@/app/utils/friends/types';
+import { FriendsHeaderTitle } from '../../utils/types/friends';
 import Image from 'next/image';
 import '../../styles/friends.style.scss';
 import Link from 'next/link';
-
-type HeaderProps = {
-	selectedItem: string;
-	chooseItem: (item: HeaderTitle) => void;
-};
+import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 type HeaderItem = {
-	title: HeaderTitle;
+	title: FriendsHeaderTitle;
 	imageSrc: string;
 	linkTo: string;
 };
@@ -39,10 +36,13 @@ const items: HeaderItem[] = [
 	},
 ];
 
-export default function FriendsHeader({
-	selectedItem,
-	chooseItem,
-}: HeaderProps) {
+export default function FriendsHeader() {
+	const location = usePathname();
+	const [selectedItem, chooseItem] = useState<FriendsHeaderTitle>(
+		items.find((item) => location.startsWith(`/friends${item.linkTo}`))
+			?.title || 'Поиск'
+	);
+
 	return (
 		<div className="friends-header">
 			{items.map((item: HeaderItem) => {
@@ -52,7 +52,7 @@ export default function FriendsHeader({
 							className={
 								'friends-header-item' +
 								(selectedItem === item.title
-									? 'friends-header-item_selected'
+									? ' friends-header-item_selected'
 									: '')
 							}
 							onClick={() => chooseItem(item.title)}

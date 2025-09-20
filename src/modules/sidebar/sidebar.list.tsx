@@ -1,28 +1,11 @@
-import SidebarItem, { SidebarItemProps } from '@/src/core/sidebar/sidebar.item';
+import SidebarItem from '@/src/core/sidebar/sidebar.item';
+import { SidebarListMock } from '@/src/mocks/sidebar';
 
 export default function SidebarList() {
-	const list = Array<SidebarItemProps>(
-		...[
-			{
-				id: 'heh',
-				name: 'Lexa',
-				avatarUrl: '',
-			},
-			{
-				id: 'heh1',
-				name: 'Andrew',
-				avatarUrl: '',
-			},
-			{
-				id: 'heh2',
-				name: 'Stas',
-				avatarUrl: '',
-			},
-		]
-	);
+	const list = SidebarListMock;
 
 	return (
-		<div className="">
+		<div className="sidebar-list">
 			{list.map((item) => {
 				return (
 					<SidebarItem
