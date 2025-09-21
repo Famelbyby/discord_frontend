@@ -1,44 +1,31 @@
-import { Friend } from '@/src/utils/types/friends';
+import {
+	AVATAR_HEIGHT,
+	AVATAR_WIDTH,
+	FRIEND_ACTIONS_ICONS,
+	IMAGE_HEIGTH,
+	IMAGE_WIDTH,
+} from '@/src/utils/constants/friends/friends';
+import { Friend } from '@/src/utils/types/friends/friends';
 import Image from 'next/image';
+import '@/src/styles/friends/friend.item.style.scss';
 
 type FriendItemProps = {
 	friend: Friend;
 };
 
-const IMAGE_WIDTH = 20;
-const IMAGE_HEIGTH = 20;
-
 function FriendActions() {
 	return (
 		<>
-			<Image
-				width={IMAGE_WIDTH}
-				height={IMAGE_HEIGTH}
-				className="friend-actions__img"
-				src="/shared/chat.png"
-				alt="Написать"
-			/>
-			<Image
-				width={IMAGE_WIDTH}
-				height={IMAGE_HEIGTH}
-				className="friend-actions__img"
-				src="/shared/call.png"
-				alt="Позвонить"
-			/>
-			<Image
-				width={IMAGE_WIDTH}
-				height={IMAGE_HEIGTH}
-				className="friend-actions__img"
-				src="/shared/cross.png"
-				alt="Удалить"
-			/>
-			<Image
-				width={IMAGE_WIDTH}
-				height={IMAGE_HEIGTH}
-				className="friend-actions__img"
-				src="/shared/block.png"
-				alt="Заблокировать"
-			/>
+			{FRIEND_ACTIONS_ICONS.map((icon) => (
+				<Image
+					key={icon.alt}
+					width={IMAGE_WIDTH}
+					height={IMAGE_HEIGTH}
+					className="friend-actions__img"
+					src={icon.src}
+					alt={icon.alt}
+				/>
+			))}
 		</>
 	);
 }
@@ -52,15 +39,15 @@ function NotFriendActions({ friend }: FriendItemProps) {
 						width={IMAGE_WIDTH}
 						height={IMAGE_HEIGTH}
 						className="friend-actions__img"
-						src="/shared/reject.png"
-						alt="Отклонить"
+						src="/shared/confirm.png"
+						alt="Принять"
 					/>
 					<Image
 						width={IMAGE_WIDTH}
 						height={IMAGE_HEIGTH}
 						className="friend-actions__img"
-						src="/shared/confirm.png"
-						alt="Принять"
+						src="/shared/reject.png"
+						alt="Отклонить"
 					/>
 				</>
 			) : friend.isOutcoming ? (
@@ -96,8 +83,8 @@ export default function FriendItem({ friend }: FriendItemProps) {
 		<div className="friend-item">
 			<div className="friend-avatar">
 				<Image
-					width={50}
-					height={50}
+					width={AVATAR_WIDTH}
+					height={AVATAR_HEIGHT}
 					className="friend-avatar__img"
 					src={friend.avatarUrl}
 					alt=""

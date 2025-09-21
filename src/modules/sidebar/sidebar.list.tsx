@@ -1,7 +1,8 @@
 import SidebarItem from '@/src/core/sidebar/sidebar.item';
 import { SidebarListMock } from '@/src/mocks/sidebar';
+import '@/src/styles/sidebar/sidebar.chats.style.scss';
 
-export default function SidebarList() {
+export default function SidebarChats() {
 	const list = SidebarListMock;
 
 	return (

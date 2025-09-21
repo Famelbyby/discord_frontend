@@ -13,3 +13,9 @@ export type Friend = {
 	isOutcoming: boolean;
 	isBlocked: boolean;
 };
+
+export type IFriendHeaderItem = {
+	title: FriendsHeaderTitle;
+	imageSrc: string;
+	linkTo: string;
+};

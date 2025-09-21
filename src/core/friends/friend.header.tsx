@@ -1,51 +1,30 @@
 'use client';
 
 import Image from 'next/image';
-import '@/src/styles/friends.style.scss';
 import Link from 'next/link';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { FriendsHeaderTitle } from '@/src/utils/types/friends';
-
-type HeaderItem = {
-	title: FriendsHeaderTitle;
-	imageSrc: string;
-	linkTo: string;
-};
-
-const items: HeaderItem[] = [
-	{
-		title: 'Поиск',
-		imageSrc: '/shared/magnifier.png',
-		linkTo: '/search',
-	},
-	{
-		title: 'Друзья',
-		imageSrc: '/friends/friends.png',
-		linkTo: '',
-	},
-	{
-		title: 'Входящие заявки',
-		imageSrc: '/friends/incoming.png',
-		linkTo: '/incoming',
-	},
-	{
-		title: 'Исходящие заявки',
-		imageSrc: '/friends/outcoming.png',
-		linkTo: '/outcoming',
-	},
-];
+import {
+	FriendsHeaderTitle,
+	IFriendHeaderItem,
+} from '@/src/utils/types/friends/friends';
+import {
+	FRIEND_HEADER_ITEM_HEIGHT,
+	FRIEND_HEADER_ITEM_WIDTH,
+	FRIEND_HEADER_ITEMS,
+} from '@/src/utils/constants/friends/friend.header';
 
 export default function FriendsHeader() {
 	const location = usePathname();
 	const [selectedItem, chooseItem] = useState<FriendsHeaderTitle>(
-		items.find((item) => location.startsWith(`/friends${item.linkTo}`))
-			?.title || 'Поиск'
+		FRIEND_HEADER_ITEMS.find((item) =>
+			location.startsWith(`/friends${item.linkTo}`)
+		)?.title || 'Поиск'
 	);
 
 	return (
 		<div className="friends-header">
-			{items.map((item: HeaderItem) => {
+			{FRIEND_HEADER_ITEMS.map((item: IFriendHeaderItem) => {
 				return (
 					<Link href={'/friends' + item.linkTo} key={item.title}>
 						<div
@@ -58,8 +37,8 @@ export default function FriendsHeader() {
 							onClick={() => chooseItem(item.title)}
 						>
 							<Image
-								width={16}
-								height={16}
+								width={FRIEND_HEADER_ITEM_WIDTH}
+								height={FRIEND_HEADER_ITEM_HEIGHT}
 								className="friends-header-item__img"
 								src={item.imageSrc}
 								alt=""
