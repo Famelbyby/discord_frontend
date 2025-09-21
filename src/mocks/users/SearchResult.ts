@@ -1,6 +1,6 @@
-import { Friend } from '@/src/utils/types/friends';
+import { RelativeUser } from '@/src/utils/types/users/users';
 
-export const SearchResultMock: Friend[] = [
+export const SearchResultMock: RelativeUser[] = [
 	{
 		id: 'heh',
 		name: 'Lexa',

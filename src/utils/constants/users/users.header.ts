@@ -1,6 +1,6 @@
-import { IFriendHeaderItem } from '../../types/friends/friends';
+import { IUsersHeaderItem } from '../../types/users/users';
 
-export const FRIEND_HEADER_ITEMS: IFriendHeaderItem[] = [
+export const USERS_HEADER_ITEMS: IUsersHeaderItem[] = [
 	{
 		title: 'Поиск',
 		imageSrc: '/shared/magnifier.png',
@@ -8,17 +8,17 @@ export const FRIEND_HEADER_ITEMS: IFriendHeaderItem[] = [
 	},
 	{
 		title: 'Друзья',
-		imageSrc: '/friends/friends.png',
-		linkTo: '',
+		imageSrc: '/users/friends.png',
+		linkTo: '/friends',
 	},
 	{
 		title: 'Входящие заявки',
-		imageSrc: '/friends/incoming.png',
+		imageSrc: '/users/incoming.png',
 		linkTo: '/incoming',
 	},
 	{
 		title: 'Исходящие заявки',
-		imageSrc: '/friends/outcoming.png',
+		imageSrc: '/users/outcoming.png',
 		linkTo: '/outcoming',
 	},
 ];

@@ -4,13 +4,13 @@ import {
 	FRIEND_ACTIONS_ICONS,
 	IMAGE_HEIGHT,
 	IMAGE_WIDTH,
-} from '@/src/utils/constants/friends/friends';
-import { Friend } from '@/src/utils/types/friends/friends';
+} from '@/src/utils/constants/users/friends';
+import { RelativeUser } from '@/src/utils/types/users/users';
 import Image from 'next/image';
-import '@/src/styles/friends/friend.item.style.scss';
+import '@/src/styles/users/relative-user.item.style.scss';
 
-type FriendItemProps = {
-	friend: Friend;
+type RelativeUserItemProps = {
+	relativeUser: RelativeUser;
 };
 
 function FriendActions() {
@@ -21,7 +21,7 @@ function FriendActions() {
 					key={icon.alt}
 					width={IMAGE_WIDTH}
 					height={IMAGE_HEIGHT}
-					className="friend-actions__img"
+					className="relative-user-actions__img"
 					src={icon.src}
 					alt={icon.alt}
 				/>
@@ -30,31 +30,31 @@ function FriendActions() {
 	);
 }
 
-function NotFriendActions({ friend }: FriendItemProps) {
+function NotFriendActions({ relativeUser }: RelativeUserItemProps) {
 	return (
 		<>
-			{friend.isIncoming ? (
+			{relativeUser.isIncoming ? (
 				<>
 					<Image
 						width={IMAGE_WIDTH}
 						height={IMAGE_HEIGHT}
-						className="friend-actions__img"
+						className="relative-user-actions__img"
 						src="/shared/confirm.png"
 						alt="Принять"
 					/>
 					<Image
 						width={IMAGE_WIDTH}
 						height={IMAGE_HEIGHT}
-						className="friend-actions__img"
+						className="relative-user-actions__img"
 						src="/shared/reject.png"
 						alt="Отклонить"
 					/>
 				</>
-			) : friend.isOutcoming ? (
+			) : relativeUser.isOutcoming ? (
 				<Image
 					width={IMAGE_WIDTH}
 					height={IMAGE_HEIGHT}
-					className="friend-actions__img"
+					className="relative-user-actions__img"
 					src="/shared/cross.png"
 					alt="Отменить"
 				/>
@@ -62,7 +62,7 @@ function NotFriendActions({ friend }: FriendItemProps) {
 				<Image
 					width={IMAGE_WIDTH}
 					height={IMAGE_HEIGHT}
-					className="friend-actions__img"
+					className="relative-user-actions__img"
 					src="/shared/add-friend.png"
 					alt="Добавить"
 				/>
@@ -70,7 +70,7 @@ function NotFriendActions({ friend }: FriendItemProps) {
 			<Image
 				width={IMAGE_WIDTH}
 				height={IMAGE_HEIGHT}
-				className="friend-actions__img"
+				className="relative-user-actions__img"
 				src="/shared/block.png"
 				alt="Заблокировать"
 			/>
@@ -78,24 +78,28 @@ function NotFriendActions({ friend }: FriendItemProps) {
 	);
 }
 
-export default function FriendItem({ friend }: FriendItemProps) {
+export default function RelativeUserItem({
+	relativeUser,
+}: RelativeUserItemProps) {
 	return (
-		<div className="friend-item">
-			<div className="friend-avatar">
+		<div className="relative-user-item">
+			<div className="relative-user-avatar">
 				<Image
 					width={AVATAR_WIDTH}
 					height={AVATAR_HEIGHT}
-					className="friend-avatar__img"
-					src={'/friends/friends.png'}
+					className="relative-user-avatar__img"
+					src={'/users/friends.png'}
 					alt=""
 				/>
-				<div className="friend-avatar__name">{friend.name}</div>
+				<div className="relative-user-avatar__name">
+					{relativeUser.name}
+				</div>
 			</div>
-			<div className="friend-actions">
-				{friend.isFriend ? (
+			<div className="relative-user-actions">
+				{relativeUser.isFriend ? (
 					<FriendActions />
 				) : (
-					<NotFriendActions friend={friend} />
+					<NotFriendActions relativeUser={relativeUser} />
 				)}
 			</div>
 		</div>

@@ -1,4 +1,4 @@
-.friends {
+.users {
 	&-list {
 		display: flex;
 		flex-direction: column;
@@ -7,7 +7,7 @@
 		row-gap: 20px;
 		align-items: center;
 
-		&__no-friends {
+		&__no-users {
 			opacity: 0.5;
 			margin-top: 30px;
 		}

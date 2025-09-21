@@ -2,17 +2,17 @@
 
 import SearchInput from '@/src/core/shared/SearchInput';
 import { useEffect, useState } from 'react';
-import SearchList from '@/src/core/friends/search.list';
-import { Friend } from '@/src/utils/types/friends/friends';
+import SearchList from '@/src/core/users/search.list';
+import { RelativeUser } from '@/src/utils/types/users/users';
 import { GetSearchByName } from '@/src/api/friends/search';
-import '@/src/styles/friends/friends.search.style.scss';
+import '@/src/styles/users/search/search.style.scss';
 
-export default function FriendsSearch() {
+export default function UsersSearch() {
 	const [input, setInput] = useState('');
-	const [searchResult, setSearchResult] = useState<Friend[]>([]);
+	const [searchResult, setSearchResult] = useState<RelativeUser[]>([]);
 
 	useEffect(() => {
-		GetSearchByName('', (result: Friend[] | undefined) => {
+		GetSearchByName('', (result: RelativeUser[] | undefined) => {
 			if (result !== undefined) {
 				setSearchResult(result);
 			}
@@ -23,7 +23,7 @@ export default function FriendsSearch() {
 		const nextInput = e.target.value;
 
 		setInput(nextInput);
-		GetSearchByName(nextInput, (result: Friend[] | undefined) => {
+		GetSearchByName(nextInput, (result: RelativeUser[] | undefined) => {
 			if (result !== undefined) {
 				setSearchResult(result);
 			}
