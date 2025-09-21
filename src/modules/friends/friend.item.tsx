@@ -2,7 +2,7 @@ import {
 	AVATAR_HEIGHT,
 	AVATAR_WIDTH,
 	FRIEND_ACTIONS_ICONS,
-	IMAGE_HEIGTH,
+	IMAGE_HEIGHT,
 	IMAGE_WIDTH,
 } from '@/src/utils/constants/friends/friends';
 import { Friend } from '@/src/utils/types/friends/friends';
@@ -20,7 +20,7 @@ function FriendActions() {
 				<Image
 					key={icon.alt}
 					width={IMAGE_WIDTH}
-					height={IMAGE_HEIGTH}
+					height={IMAGE_HEIGHT}
 					className="friend-actions__img"
 					src={icon.src}
 					alt={icon.alt}

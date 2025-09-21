@@ -1,5 +1,4 @@
 import SidebarItem from '@/src/core/sidebar/sidebar.item';
-import { SidebarListMock } from '@/src/mocks/sidebar';
 import '@/src/styles/sidebar/sidebar.chats.style.scss';
 import { SidebarListMock } from '@/src/mocks/sidebar/chats';
 

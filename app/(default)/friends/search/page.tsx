@@ -2,10 +2,10 @@
 
 import SearchInput from '@/src/core/shared/SearchInput';
 import { useEffect, useState } from 'react';
-import '../../../../src/styles/friends.style.scss';
 import SearchList from '@/src/core/friends/search.list';
-import { Friend } from '@/src/utils/types/friends';
+import { Friend } from '@/src/utils/types/friends/friends';
 import { GetSearchByName } from '@/src/api/friends/search';
+import '@/src/styles/friends/friends.search.style.scss';
 
 export default function FriendsSearch() {
 	const [input, setInput] = useState('');

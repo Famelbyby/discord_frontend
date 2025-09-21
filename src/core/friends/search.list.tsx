@@ -1,5 +1,5 @@
 import FriendItem from '@/src/modules/friends/friend.item';
-import { Friend } from '@/src/utils/types/friends';
+import { Friend } from '@/src/utils/types/friends/friends';
 
 interface SearchListProps {
 	searchResult: Friend[];
