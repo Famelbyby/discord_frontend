@@ -1,11 +1,11 @@
 'use client';
 
-import { FriendsHeaderTitle } from '../../utils/types/friends';
 import Image from 'next/image';
-import '../../styles/friends.style.scss';
+import '@/src/styles/friends.style.scss';
 import Link from 'next/link';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { FriendsHeaderTitle } from '@/src/utils/types/friends';
 
 type HeaderItem = {
 	title: FriendsHeaderTitle;
