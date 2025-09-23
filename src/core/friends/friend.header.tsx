@@ -4,10 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import {
-	FriendsHeaderTitle,
-	IFriendHeaderItem,
-} from '@/src/utils/types/friends/friends';
+import type { FriendsHeaderTitle } from '@/src/utils/types/friends/friends';
 import {
 	FRIEND_HEADER_ITEM_HEIGHT,
 	FRIEND_HEADER_ITEM_WIDTH,
@@ -24,7 +21,7 @@ export default function FriendsHeader() {
 
 	return (
 		<div className="friends-header">
-			{FRIEND_HEADER_ITEMS.map((item: IFriendHeaderItem) => {
+			{FRIEND_HEADER_ITEMS.map((item) => {
 				return (
 					<Link href={'/friends' + item.linkTo} key={item.title}>
 						<div

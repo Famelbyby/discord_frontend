@@ -13,18 +13,28 @@ type FriendItemProps = {
 	friend: Friend;
 };
 
+interface IActionImage {
+	src: string;
+	alt: string;
+}
+
+function ActionImage({ src, alt }: IActionImage) {
+	return (
+		<Image
+			width={IMAGE_WIDTH}
+			height={IMAGE_HEIGTH}
+			className="friend-actions__img"
+			src={src}
+			alt={alt}
+		/>
+	);
+}
+
 function FriendActions() {
 	return (
 		<>
 			{FRIEND_ACTIONS_ICONS.map((icon) => (
-				<Image
-					key={icon.alt}
-					width={IMAGE_WIDTH}
-					height={IMAGE_HEIGHT}
-					className="friend-actions__img"
-					src={icon.src}
-					alt={icon.alt}
-				/>
+				<ActionImage key={icon.alt} src={icon.src} alt={icon.alt} />
 			))}
 		</>
 	);
@@ -35,45 +45,15 @@ function NotFriendActions({ friend }: FriendItemProps) {
 		<>
 			{friend.isIncoming ? (
 				<>
-					<Image
-						width={IMAGE_WIDTH}
-						height={IMAGE_HEIGHT}
-						className="friend-actions__img"
-						src="/shared/confirm.png"
-						alt="Принять"
-					/>
-					<Image
-						width={IMAGE_WIDTH}
-						height={IMAGE_HEIGHT}
-						className="friend-actions__img"
-						src="/shared/reject.png"
-						alt="Отклонить"
-					/>
+					<ActionImage src="/shared/confirm.png" alt="Принять" />
+					<ActionImage src="/shared/reject.png" alt="Отклонить" />
 				</>
 			) : friend.isOutcoming ? (
-				<Image
-					width={IMAGE_WIDTH}
-					height={IMAGE_HEIGHT}
-					className="friend-actions__img"
-					src="/shared/cross.png"
-					alt="Отменить"
-				/>
+				<ActionImage src="/shared/cross.png" alt="Отменить" />
 			) : (
-				<Image
-					width={IMAGE_WIDTH}
-					height={IMAGE_HEIGHT}
-					className="friend-actions__img"
-					src="/shared/add-friend.png"
-					alt="Добавить"
-				/>
+				<ActionImage src="/shared/add-friend.png" alt="Добавить" />
 			)}
-			<Image
-				width={IMAGE_WIDTH}
-				height={IMAGE_HEIGHT}
-				className="friend-actions__img"
-				src="/shared/block.png"
-				alt="Заблокировать"
-			/>
+			<ActionImage src="/shared/block.png" alt="Заблокировать" />
 		</>
 	);
 }
