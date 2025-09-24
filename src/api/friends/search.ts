@@ -1,5 +1,5 @@
 import { SearchResultMock } from '@/src/mocks/friends/SearchResult';
-import { Friend } from '@/src/utils/types/friends';
+import { Friend } from '@/src/utils/types/friends/friends';
 
 export function GetSearchByName(
 	input: string,
