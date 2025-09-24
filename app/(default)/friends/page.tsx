@@ -6,7 +6,7 @@ import '@/src/styles/friends/friends.general.style.scss';
 
 export default function Friends() {
 	return (
-		<div className={INTER_FONT + ' friends-page'}>
+		<div className={INTER_FONT.className + ' friends-page'}>
 			<div className={'friends-page__title'}>Ваши друзья</div>
 			<FriendList />
 		</div>

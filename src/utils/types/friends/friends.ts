@@ -19,3 +19,8 @@ export type IFriendHeaderItem = {
 	imageSrc: string;
 	linkTo: string;
 };
+
+export interface IFriendActionsIcon {
+	alt: string;
+	src: string;
+}
