@@ -1,7 +1,8 @@
 'use client';
 
 import { INTER_FONT } from '@/src/fonts/fonts';
-import FriendList from '@/src/modules/friends/friend.list';
+import FriendList from '@/src/modules/users/friends/friend.list';
+import '@/src/styles/users/friends/friends.general.style.scss';
 
 export default function Friends() {
 	return (

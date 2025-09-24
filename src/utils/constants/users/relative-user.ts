@@ -1,6 +1,9 @@
-import { IFriendActionsIcon } from '../../types/friends/friends';
+import { IRelativeUserActionsIcon } from '../../types/users/users';
 
-export const FRIEND_ACTIONS_ICONS: Record<string, IFriendActionsIcon[]> = {
+export const RELATIVE_USER_ACTIONS_ICONS: Record<
+	string,
+	IRelativeUserActionsIcon[]
+> = {
 	friend: [
 		{
 			src: '/shared/chat.png',
