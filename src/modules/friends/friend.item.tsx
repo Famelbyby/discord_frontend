@@ -1,72 +1,32 @@
-import { Friend } from '@/src/utils/types/friends';
+import {
+	AVATAR_HEIGHT,
+	AVATAR_WIDTH,
+	IMAGE_HEIGTH,
+	IMAGE_WIDTH,
+} from '@/src/utils/constants/friends/friends';
+import { Friend } from '@/src/utils/types/friends/friends';
 import Image from 'next/image';
+import '@/src/styles/friends/friend.item.style.scss';
+import { FriendItemActions } from '@/src/utils/helpers/friends/friend.item';
 
 type FriendItemProps = {
 	friend: Friend;
 };
 
-function FriendActions() {
-	return (
-		<>
-			<Image
-				className="friend-actions__chat"
-				src="/shared/chat.png"
-				alt="Написать"
-			/>
-			<Image
-				className="friend-actions__call"
-				src="/shared/call.png"
-				alt="Позвонить"
-			/>
-			<Image
-				className="friend-actions__delete"
-				src="/shared/cross.png"
-				alt="Удалить"
-			/>
-			<Image
-				className="friend-actions__block"
-				src="/shared/block.png"
-				alt="Заблокировать"
-			/>
-		</>
-	);
+interface IActionImage {
+	src: string;
+	alt: string;
 }
 
-function NotFriendActions({ friend }: FriendItemProps) {
+function ActionImage({ src, alt }: IActionImage) {
 	return (
-		<>
-			{friend.isIncoming ? (
-				<>
-					<Image
-						className="friend-actions__reject"
-						src="/shared/reject.png"
-						alt="Отклонить"
-					/>
-					<Image
-						className="friend-actions__confirm"
-						src="/shared/confirm.png"
-						alt="Принять"
-					/>
-				</>
-			) : friend.isOutcoming ? (
-				<Image
-					className="friend-actions__cancel"
-					src="/shared/cross.png"
-					alt="Отменить"
-				/>
-			) : (
-				<Image
-					className="friend-actions__add-friend"
-					src="/shared/add-friend.png"
-					alt="Добавить"
-				/>
-			)}
-			<Image
-				className="friend-actions__block"
-				src="/shared/block.png"
-				alt="Заблокировать"
-			/>
-		</>
+		<Image
+			width={IMAGE_WIDTH}
+			height={IMAGE_HEIGTH}
+			className="friend-actions__img"
+			src={src}
+			alt={alt}
+		/>
 	);
 }
 
@@ -75,18 +35,22 @@ export default function FriendItem({ friend }: FriendItemProps) {
 		<div className="friend-item">
 			<div className="friend-avatar">
 				<Image
+					width={AVATAR_WIDTH}
+					height={AVATAR_HEIGHT}
 					className="friend-avatar__img"
-					src={friend.avatar}
+					src={friend.avatarUrl}
 					alt=""
 				/>
 				<div className="friend-avatar__name">{friend.name}</div>
-				<div className="friend-actions">
-					{friend.isFriend ? (
-						<FriendActions />
-					) : (
-						<NotFriendActions friend={friend} />
-					)}
-				</div>
+			</div>
+			<div className="friend-actions">
+				{FriendItemActions(friend).map((action) => (
+					<ActionImage
+						key={action.alt}
+						src={action.src}
+						alt={action.alt}
+					/>
+				))}
 			</div>
 		</div>
 	);

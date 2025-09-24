@@ -1,4 +1,4 @@
-import SidebarList from '@/src/modules/sidebar/sidebar.list';
+import SidebarChats from '@/src/modules/sidebar/sidebar.list';
 import '../globals.css';
 
 export default function RootLayout({
@@ -9,7 +9,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body>
-				<SidebarList />
+				<SidebarChats />
 				{children}
 			</body>
 		</html>
