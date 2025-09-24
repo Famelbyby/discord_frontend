@@ -3,31 +3,27 @@
 import SearchInput from '@/src/core/shared/SearchInput';
 import { useEffect, useState } from 'react';
 import SearchList from '@/src/core/users/search/search.list';
+import '@/src/styles/users/search/search.style.scss';
 import { RelativeUser } from '@/src/utils/types/users/users';
 import { GetSearchByName } from '@/src/api/users/search';
-import '@/src/styles/users/search/search.style.scss';
 
 export default function UsersSearch() {
 	const [input, setInput] = useState('');
 	const [searchResult, setSearchResult] = useState<RelativeUser[]>([]);
 
 	useEffect(() => {
-		GetSearchByName('', (result: RelativeUser[] | undefined) => {
-			if (result !== undefined) {
-				setSearchResult(result);
-			}
-		});
+		updateSearchResult('');
 	}, []);
+
+	async function updateSearchResult(queue: string) {
+		setSearchResult(await GetSearchByName(queue));
+	}
 
 	function onChangeInput(e: React.ChangeEvent<HTMLInputElement>) {
 		const nextInput = e.target.value;
 
 		setInput(nextInput);
-		GetSearchByName(nextInput, (result: RelativeUser[] | undefined) => {
-			if (result !== undefined) {
-				setSearchResult(result);
-			}
-		});
+		updateSearchResult(nextInput);
 	}
 
 	return (
