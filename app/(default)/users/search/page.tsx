@@ -6,24 +6,26 @@ import SearchList from '@/src/core/users/search/search.list';
 import '@/src/styles/users/search/search.style.scss';
 import { RelativeUser } from '@/src/utils/types/users/users';
 import { GetSearchByName } from '@/src/api/users/search';
+import { SEARCH_DEBOUNCE_TIMEOUT } from '@/src/utils/constants/users/search/general';
+import { useDebounce } from '@/src/utils/hooks/shared/useDebounce';
 
 export default function UsersSearch() {
 	const [input, setInput] = useState('');
 	const [searchResult, setSearchResult] = useState<RelativeUser[]>([]);
 
-	useEffect(() => {
-		updateSearchResult('');
-	}, []);
-
-	async function updateSearchResult(queue: string) {
+	const debouncedFunc = useDebounce(async (queue: string) => {
 		setSearchResult(await GetSearchByName(queue));
-	}
+	}, SEARCH_DEBOUNCE_TIMEOUT);
+
+	useEffect(() => {
+		debouncedFunc('');
+	}, []);
 
 	function onChangeInput(e: React.ChangeEvent<HTMLInputElement>) {
 		const nextInput = e.target.value;
 
 		setInput(nextInput);
-		updateSearchResult(nextInput);
+		debouncedFunc(nextInput);
 	}
 
 	return (
