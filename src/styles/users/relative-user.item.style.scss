@@ -1,4 +1,4 @@
-.friend {
+.relative-user {
 	&-item {
 		display: flex;
 		align-items: center;
@@ -26,6 +26,25 @@
 
 		&__name {
 			color: white;
+			position: relative;
+
+			&::after {
+				content: '';
+				height: 1px;
+				width: 0px;
+				left: 50%;
+				transition-duration: 0.2s;
+				background-color: white;
+				position: absolute;
+				bottom: -1px;
+			}
+
+			&:hover {
+				&::after {
+					width: 100%;
+					left: 0;
+				}
+			}
 		}
 	}
 

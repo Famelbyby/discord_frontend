@@ -1,6 +1,9 @@
-import { IFriendActionsIcon } from '../../types/friends/friends';
+import { IRelativeUserActionsIcon } from '../../types/users/users';
 
-export const FRIEND_ACTIONS_ICONS: Record<string, IFriendActionsIcon[]> = {
+export const RELATIVE_USER_ACTIONS_ICONS: Record<
+	string,
+	IRelativeUserActionsIcon[]
+> = {
 	friend: [
 		{
 			src: '/shared/chat.png',
@@ -46,6 +49,6 @@ export const FRIEND_ACTIONS_ICONS: Record<string, IFriendActionsIcon[]> = {
 };
 
 export const IMAGE_WIDTH = 20;
-export const IMAGE_HEIGTH = 20;
+export const IMAGE_HEIGHT = 20;
 export const AVATAR_WIDTH = 50;
 export const AVATAR_HEIGHT = 50;

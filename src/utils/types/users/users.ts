@@ -1,10 +1,10 @@
-export type FriendsHeaderTitle =
+export type UsersHeaderTitle =
 	| 'Поиск'
 	| 'Друзья'
 	| 'Входящие заявки'
 	| 'Исходящие заявки';
 
-export type Friend = {
+export type RelativeUser = {
 	id: string;
 	avatarUrl: string;
 	name: string;
@@ -14,13 +14,13 @@ export type Friend = {
 	isBlocked: boolean;
 };
 
-export type IFriendHeaderItem = {
-	title: FriendsHeaderTitle;
+export type UsersHeaderItem = {
+	title: UsersHeaderTitle;
 	imageSrc: string;
 	linkTo: string;
 };
 
-export interface IFriendActionsIcon {
+export interface IRelativeUserActionsIcon {
 	alt: string;
 	src: string;
 }
