@@ -1,4 +1,4 @@
-import { SearchResultMock } from '@/src/mocks/users/SearchResult';
+import { SearchResultMock } from '@/src/mocks/users/search/SearchResult';
 
 export async function GetSearchByName(input: string) {
 	return Promise.resolve(
