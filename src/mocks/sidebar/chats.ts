@@ -1,6 +1,6 @@
-import { SidebarItemProps } from '../../core/sidebar/sidebar.item';
+import { ISidebarItem } from '../utils/types/sidebar/sidebar.item';
 
-export const SidebarListMock: SidebarItemProps[] = [
+export const SidebarListMock: ISidebarItem[] = [
 	{
 		id: 'heh',
 		name: 'Lexa',
