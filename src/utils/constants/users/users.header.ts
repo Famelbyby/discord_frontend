@@ -1,6 +1,6 @@
-import { IUsersHeaderItem } from '../../types/users/users';
+import { UsersHeaderItem } from '../../types/users/users';
 
-export const USERS_HEADER_ITEMS: IUsersHeaderItem[] = [
+export const USERS_HEADER_ITEMS: UsersHeaderItem[] = [
 	{
 		title: 'Поиск',
 		imageSrc: '/shared/magnifier.png',

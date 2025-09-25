@@ -14,7 +14,7 @@ export type RelativeUser = {
 	isBlocked: boolean;
 };
 
-export type IUsersHeaderItem = {
+export type UsersHeaderItem = {
 	title: UsersHeaderTitle;
 	imageSrc: string;
 	linkTo: string;
