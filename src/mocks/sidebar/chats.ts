@@ -1,4 +1,4 @@
-import { ISidebarItem } from '../utils/types/sidebar/sidebar.item';
+import { ISidebarItem } from '@/src/utils/types/sidebar/sidebar.item';
 
 export const SidebarListMock: ISidebarItem[] = [
 	{
