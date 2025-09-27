@@ -10,7 +10,7 @@ import {
 	USERS_HEADER_ITEM_WIDTH,
 	USERS_HEADER_ITEMS,
 } from '@/src/utils/constants/users/users.header';
-import { USERS_URL } from '@/src/utils/constants/shared/URLS';
+import { USERS_URL } from '@/src/utils/constants/shared/URLs/front.urls';
 
 export default function UsersHeader() {
 	const location = usePathname();

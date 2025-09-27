@@ -12,7 +12,7 @@ export default function Friends() {
 
 	useEffect(() => {
 		async function updateFriends() {
-			setFriendsList(await GetFriends());
+			setFriendsList(await GetFriends('1')); //mocked user id
 		}
 
 		updateFriends();
