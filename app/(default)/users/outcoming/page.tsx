@@ -12,7 +12,7 @@ export default function Outcomings() {
 
 	useEffect(() => {
 		async function updateOutcomings() {
-			setOutcomingList(await GetOutcomings());
+			setOutcomingList(await GetOutcomings('1')); //mocked user id
 		}
 
 		updateOutcomings();

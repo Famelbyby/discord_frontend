@@ -12,7 +12,7 @@ export default function Incomings() {
 
 	useEffect(() => {
 		async function updateIncomings() {
-			setIncomingList(await GetIncomings());
+			setIncomingList(await GetIncomings('1')); //mocked user id
 		}
 
 		updateIncomings();
