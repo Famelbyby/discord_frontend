@@ -1,7 +1,8 @@
 import React from 'react';
-import { FormFieldProps } from '@/src/utils/types/auth';
+import { IFormFieldProps } from '@/src/utils/types/auth';
+import '../../styles/auth.style.scss';
 
-export const FormField: React.FC<FormFieldProps> = ({
+export const FormField: React.FC<IFormFieldProps> = ({
 	label,
 	type,
 	name,
@@ -12,14 +13,11 @@ export const FormField: React.FC<FormFieldProps> = ({
 	required = true,
 }) => {
 	return (
-		<div>
-			<label
-				htmlFor={name}
-				className="block text-sm/6 font-medium text-gray-900 dark:text-white"
-			>
+		<div className="form-field">
+			<label htmlFor={name} className="form-field__label">
 				{label}
 			</label>
-			<div className="mt-2">
+			<div className="form-field__input-wrapper">
 				<input
 					id={name}
 					type={type}
@@ -29,9 +27,9 @@ export const FormField: React.FC<FormFieldProps> = ({
 					required={required}
 					placeholder={placeholder}
 					autoComplete="off"
-					className="block w-full rounded-md  px-3 py-1.5 text-base text-gray-900 dark:text-white outline-1 -outline-offset-1  placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+					className={`form-field__input ${error ? 'form-field__input--error' : ''}`}
 				/>
-				{error && <p className="mt-1 text-sm text-red-600">{error}</p>}
+				{error && <p className="form-field__error">{error}</p>}
 			</div>
 		</div>
 	);

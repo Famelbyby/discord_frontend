@@ -1,27 +1,27 @@
-export interface LoginFormData {
+export interface ILoginFormData {
 	username: string;
 	password: string;
 }
 
-export interface LoginErrors {
+export interface ILoginErrors {
 	username?: string;
 	password?: string;
 	server?: string;
 }
 
-export interface LoginResponse {
+export interface ILoginResponse {
 	access: string;
 	refresh: string;
 }
 
-export interface FormData {
+export interface IFormData {
 	name: string;
 	email: string;
 	password: string;
 	password2: string;
 }
 
-export interface Errors {
+export interface IErrors {
 	name?: string;
 	email?: string;
 	password?: string;
@@ -29,7 +29,7 @@ export interface Errors {
 	server?: string;
 }
 
-export interface FormFieldProps {
+export interface IFormFieldProps {
 	label: string;
 	type: string;
 	name: string;
@@ -40,25 +40,44 @@ export interface FormFieldProps {
 	required?: boolean;
 }
 
-export interface FormContainerProps {
+export interface IFormContainerProps {
 	title: string;
 	subtitle: string;
 	children: React.ReactNode;
 }
 
-export interface SubmitButtonProps {
+export interface ISubmitButtonProps {
 	isLoading: boolean;
 	loadingText: string;
 	defaultText: string;
 }
 
-export interface ServerErrorProps {
+export interface IServerErrorProps {
 	message: string;
 }
 
-export interface RegisterFormProps {
-	formData: FormData;
-	errors: Errors;
+export interface IRegisterFormProps {
+	formData: IFormData;
+	errors: IErrors;
+	isLoading: boolean;
+	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	onSubmit: (e: React.FormEvent) => void;
+}
+
+export interface ILoginFormData {
+	username: string;
+	password: string;
+}
+
+export interface ILoginErrors {
+	username?: string;
+	password?: string;
+	server?: string;
+}
+
+export interface ILoginFormProps {
+	formData: ILoginFormData;
+	errors: ILoginErrors;
 	isLoading: boolean;
 	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 	onSubmit: (e: React.FormEvent) => void;

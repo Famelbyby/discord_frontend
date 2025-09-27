@@ -1,12 +1,9 @@
 import React from 'react';
-import { ServerErrorProps } from '@/src/utils/types/auth';
+import { IServerErrorProps } from '@/src/utils/types/auth';
+import '../../styles/auth.style.scss';
 
-export const ServerError: React.FC<ServerErrorProps> = ({ message }) => {
+export const ServerError: React.FC<IServerErrorProps> = ({ message }) => {
 	if (!message) return null;
 
-	return (
-		<div className="p-3 bg-red-100 border border-red-400 text-red-700 rounded-md">
-			{message}
-		</div>
-	);
+	return <div className="server-error">{message}</div>;
 };

@@ -1,7 +1,7 @@
 import React from 'react';
-import { SubmitButtonProps } from '@/src/utils/types/auth';
+import { ISubmitButtonProps } from '@/src/utils/types/auth';
 
-export const SubmitButton: React.FC<SubmitButtonProps> = ({
+export const SubmitButton: React.FC<ISubmitButtonProps> = ({
 	isLoading,
 	loadingText,
 	defaultText,
