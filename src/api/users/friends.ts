@@ -1,11 +1,7 @@
 import { FriendsListMock } from '@/src/mocks/users/friends/friends';
 import AxiosClient from '@/src/utils/clients/axios.client';
 import { FRIENDS_URL } from '@/src/utils/constants/shared/URLs/api.urls';
-import { RelativeUser } from '@/src/utils/types/users/users';
-
-interface IGetFriendsResponse {
-	friends: RelativeUser[];
-}
+import { IGetFriendsResponse } from '@/src/utils/types/users/friends/api';
 
 export async function GetFriends(id: string) {
 	const response = await AxiosClient.get<IGetFriendsResponse>(

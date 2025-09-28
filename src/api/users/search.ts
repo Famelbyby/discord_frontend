@@ -1,11 +1,7 @@
 import { SearchResultMock } from '@/src/mocks/users/search/SearchResult';
 import AxiosClient from '@/src/utils/clients/axios.client';
 import { PROFILE_URL } from '@/src/utils/constants/shared/URLs/api.urls';
-import { RelativeUser } from '@/src/utils/types/users/users';
-
-interface IGetSearchByNameResponse {
-	profiles: RelativeUser[];
-}
+import { IGetSearchByNameResponse } from '@/src/utils/types/users/search/api';
 
 export async function GetSearchByName(input: string) {
 	const response = await AxiosClient.get<IGetSearchByNameResponse>(
