@@ -3,3 +3,4 @@ export const FRIENDS_URL = '/friends';
 export const INCOMING_URL = '/incoming';
 export const OUTCOMING_URL = '/outcoming';
 export const BLOCKS_URL = '/blocks';
+export const PROFILE_URL = '/profile';

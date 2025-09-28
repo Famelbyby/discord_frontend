@@ -2,6 +2,7 @@
 
 import { GetIncomings } from '@/src/api/users/incoming';
 import { INTER_FONT } from '@/src/fonts/fonts';
+import { USER_ID } from '@/src/mocks/stores/user';
 import RelativeUserList from '@/src/modules/users/relative-user.list';
 import '@/src/styles/users/incoming/general.style.scss';
 import { RelativeUser } from '@/src/utils/types/users/users';
@@ -12,7 +13,7 @@ export default function Incomings() {
 
 	useEffect(() => {
 		async function updateIncomings() {
-			setIncomingList(await GetIncomings('1')); //mocked user id
+			setIncomingList(await GetIncomings(USER_ID)); //mocked user id
 		}
 
 		updateIncomings();
