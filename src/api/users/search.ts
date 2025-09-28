@@ -3,8 +3,14 @@ import AxiosClient from '@/src/utils/clients/axios.client';
 import { PROFILE_URL } from '@/src/utils/constants/shared/URLs/api.urls';
 import { RelativeUser } from '@/src/utils/types/users/users';
 
+interface IGetSearchByNameResponse {
+	profiles: RelativeUser[];
+}
+
 export async function GetSearchByName(input: string) {
-	const response = await AxiosClient.get(`${PROFILE_URL}?name=${input}`);
+	const response = await AxiosClient.get<IGetSearchByNameResponse>(
+		`${PROFILE_URL}?name=${input}`
+	);
 
 	if (response.error !== undefined) {
 		return SearchResultMock.filter((relativeUser) =>
@@ -12,5 +18,5 @@ export async function GetSearchByName(input: string) {
 		); //mocked until backend will work
 	}
 
-	return response.data.profiles as RelativeUser[];
+	return response.data.profiles;
 }

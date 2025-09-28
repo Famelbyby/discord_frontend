@@ -5,11 +5,11 @@ import { SERVER_ERROR } from '../constants/shared/api.codes';
 
 type MethodType = 'get' | 'post' | 'delete' | 'put';
 
-function RestructureResponse(resp: AxiosResponse) {
-	return {
+function RestructureResponse<T>(resp: AxiosResponse) {
+	return <AxiosClientResponse<T>>{
 		status: resp.status,
 		data: resp.data,
-	} as AxiosClientResponse;
+	};
 }
 
 class _AxiosClient {
@@ -19,33 +19,33 @@ class _AxiosClient {
 		this.baseUrl = url;
 	}
 
-	private async method(
+	private async method<T, G = unknown>(
 		type: MethodType,
 		url: string,
-		data?: any
-	): Promise<AxiosClientResponse> {
+		data?: G
+	): Promise<AxiosClientResponse<T>> {
 		try {
 			switch (type) {
 				case 'get':
-					return RestructureResponse(
+					return RestructureResponse<T>(
 						await axios.get(this.baseUrl + url, {
 							withCredentials: true,
 						})
 					);
 				case 'post':
-					return RestructureResponse(
+					return RestructureResponse<T>(
 						await axios.post(this.baseUrl + url, data, {
 							withCredentials: true,
 						})
 					);
 				case 'put':
-					return RestructureResponse(
+					return RestructureResponse<T>(
 						await axios.put(this.baseUrl + url, data, {
 							withCredentials: true,
 						})
 					);
 				case 'delete':
-					return RestructureResponse(
+					return RestructureResponse<T>(
 						await axios.delete(this.baseUrl + url, {
 							withCredentials: true,
 						})
@@ -54,28 +54,60 @@ class _AxiosClient {
 		} catch (error: any) {
 			error = error as AxiosError;
 
-			return {
+			return <AxiosClientResponse<T>>{
 				status: error.status | SERVER_ERROR,
 				data: undefined,
 				error: error.message,
-			} as AxiosClientResponse;
+			};
 		}
 	}
 
-	get(url: string) {
-		return this.method('get', url);
+	/**
+	 * GET-запрос
+	 *
+	 * @template T - тип возвращаемой data
+	 * @param url - URL ручки
+	 * @returns
+	 */
+	get<T>(url: string) {
+		return this.method<T>('get', url);
 	}
 
-	post(url: string, data: any) {
-		return this.method('post', url, data);
+	/**
+	 * POST-запрос
+	 *
+	 * @template T - тип возвращаемой data
+	 * @template G - тип передаваемой data
+	 * @param url - URL ручки
+	 * @param data - data для тела запроса
+	 * @returns
+	 */
+	post<T, G>(url: string, data: G) {
+		return this.method<T>('post', url, data);
 	}
 
-	put(url: string, data: any) {
-		return this.method('put', url, data);
+	/**
+	 * PUT-запрос
+	 *
+	 * @template T - тип возвращаемой data
+	 * @template G - тип передаваемой data
+	 * @param url - URL ручки
+	 * @param data - data для тела запроса
+	 * @returns
+	 */
+	put<T, G>(url: string, data: G) {
+		return this.method<T>('put', url, data);
 	}
 
-	delete(url: string) {
-		return this.method('delete', url);
+	/**
+	 * DELETE-запрос
+	 *
+	 * @template T - тип возвращаемой data
+	 * @param url - URL ручки
+	 * @returns
+	 */
+	delete<T>(url: string) {
+		return this.method<T>('delete', url);
 	}
 }
 

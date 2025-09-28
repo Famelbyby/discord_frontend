@@ -1,5 +1,5 @@
-export interface AxiosClientResponse {
+export interface AxiosClientResponse<T> {
 	status: number;
-	data: any;
-	error: string | undefined;
+	data: T;
+	error?: string;
 }
