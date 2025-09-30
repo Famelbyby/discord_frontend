@@ -3,7 +3,7 @@ import type { RelativeUser } from '@/src/utils/types/users/users';
 export const SearchResultMock: RelativeUser[] = [
 	{
 		id: 'heh',
-		name: 'Lexa',
+		username: 'Lexa',
 		avatarUrl: '',
 		isFriend: true,
 		isIncoming: false,
@@ -12,7 +12,7 @@ export const SearchResultMock: RelativeUser[] = [
 	},
 	{
 		id: 'heh1',
-		name: 'Andrew',
+		username: 'Andrew',
 		avatarUrl: '',
 		isFriend: false,
 		isIncoming: true,
@@ -21,7 +21,7 @@ export const SearchResultMock: RelativeUser[] = [
 	},
 	{
 		id: 'heh2',
-		name: 'Stas',
+		username: 'Stas',
 		avatarUrl: '',
 		isFriend: false,
 		isIncoming: false,
@@ -30,7 +30,7 @@ export const SearchResultMock: RelativeUser[] = [
 	},
 	{
 		id: 'asdkk322',
-		name: 'Yaro',
+		username: 'Yaro',
 		avatarUrl: '',
 		isFriend: false,
 		isIncoming: false,

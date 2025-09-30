@@ -7,7 +7,7 @@ export type UsersHeaderTitle =
 export type RelativeUser = {
 	id: string;
 	avatarUrl: string;
-	name: string;
+	username: string;
 	isFriend: boolean;
 	isIncoming: boolean;
 	isOutcoming: boolean;

@@ -2,18 +2,19 @@
 
 import { GetFriends } from '@/src/api/users/friends';
 import { INTER_FONT } from '@/src/fonts/fonts';
-import { USER_ID } from '@/src/mocks/stores/user';
 import RelativeUserList from '@/src/modules/users/relative-user.list';
+import { useUserStore } from '@/src/stores/user.store';
 import '@/src/styles/users/friends/friends.general.style.scss';
 import { RelativeUser } from '@/src/utils/types/users/users';
 import { useEffect, useState } from 'react';
 
 export default function Friends() {
 	const [friendsList, setFriendsList] = useState<RelativeUser[]>([]);
+	const { id } = useUserStore();
 
 	useEffect(() => {
 		async function updateFriends() {
-			setFriendsList(await GetFriends(USER_ID)); //mocked user id
+			setFriendsList(await GetFriends(id));
 		}
 
 		updateFriends();

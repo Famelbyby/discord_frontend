@@ -44,7 +44,7 @@ export default function RelativeUserItem({
 					alt=""
 				/>
 				<div className="relative-user-avatar__name">
-					{relativeUser.name}
+					{relativeUser.username}
 				</div>
 			</div>
 			<div className="relative-user-actions">
