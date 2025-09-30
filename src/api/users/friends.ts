@@ -9,7 +9,7 @@ export async function GetFriends(id: string) {
 	);
 
 	if (response.error !== undefined) {
-		return RelativeUsersListMock; //mocked until backend will work
+		return RelativeUsersListMock.filter((user) => user.isFriend); //mocked until backend will work
 	}
 
 	return response.data.friends;
