@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useRegister } from '@/src/api/auth/register';
-import { RegisterForm } from '../../../src/modules/auth/RegisterForm';
+import { RegisterForm } from '@/src/modules/auth/RegisterForm';
 
 function Register() {
 	const { formData, errors, isLoading, handleChange, handleSubmit } =

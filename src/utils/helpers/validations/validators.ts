@@ -11,7 +11,7 @@ export interface IUserValidationErrors {
 	password?: string;
 }
 
-export const validateEmail = (email: string): string | null => {
+export const ValidateEmail = (email: string): string | null => {
 	if (!email.trim()) {
 		return 'Email is required';
 	}
@@ -28,7 +28,7 @@ export const validateEmail = (email: string): string | null => {
 	return null;
 };
 
-export const validateUsername = (username: string): string | null => {
+export const ValidateUsername = (username: string): string | null => {
 	if (!username.trim()) {
 		return 'Username is required';
 	}
@@ -49,7 +49,7 @@ export const validateUsername = (username: string): string | null => {
 	return null;
 };
 
-export const validateAvatar = (file: File | null): string | null => {
+export const ValidateAvatar = (file: File | null): string | null => {
 	if (!file) {
 		return null;
 	}
@@ -67,7 +67,7 @@ export const validateAvatar = (file: File | null): string | null => {
 	return null;
 };
 
-export const validateStatus = (status: string | null): string | null => {
+export const ValidateStatus = (status: string | null): string | null => {
 	if (!status) {
 		return null;
 	}
@@ -79,7 +79,7 @@ export const validateStatus = (status: string | null): string | null => {
 	return null;
 };
 
-export const validateUser = (userData: {
+export const ValidateUser = (userData: {
 	email: string;
 	username: string;
 	avatar?: File | null;
@@ -88,33 +88,33 @@ export const validateUser = (userData: {
 }): IUserValidationErrors => {
 	const errors: IUserValidationErrors = {};
 
-	const emailError = validateEmail(userData.email);
+	const emailError = ValidateEmail(userData.email);
 	if (emailError) errors.email = emailError;
 
-	const usernameError = validateUsername(userData.username);
+	const usernameError = ValidateUsername(userData.username);
 	if (usernameError) errors.username = usernameError;
 
 	if (userData.avatar) {
-		const avatarError = validateAvatar(userData.avatar);
+		const avatarError = ValidateAvatar(userData.avatar);
 		if (avatarError) errors.avatar = avatarError;
 	}
 
 	if (userData.status) {
-		const statusError = validateStatus(userData.status);
+		const statusError = ValidateStatus(userData.status);
 		if (statusError) errors.status = statusError;
 	}
 
 	return errors;
 };
 
-export const validateRegistrationForm = (formData: {
+export const ValidateRegistrationForm = (formData: {
 	email: string;
 	username: string;
 	password: string;
 	avatar?: File | null;
 	status?: string | null;
 }): IUserValidationErrors => {
-	const errors = validateUser(formData);
+	const errors = ValidateUser(formData);
 
 	if (!formData.password) {
 		errors.password = 'Password is required';
@@ -125,18 +125,11 @@ export const validateRegistrationForm = (formData: {
 	return errors;
 };
 
-export const checkEmailUnique = async (): Promise<boolean> => {
-	try {
-		// const response = await axios.get(`/api/users/check-email?email=${email}`);
-		// return response.data.isUnique;
-		return true;
-	} catch (error) {
-		console.error('Error checking email uniqueness:', error);
-		return false;
-	}
+export const CheckEmailUnique = async (): Promise<boolean> => {
+	return true;
 };
 
-export const checkUsernameUnique = async (): Promise<boolean> => {
+export const CheckUsernameUnique = async (): Promise<boolean> => {
 	try {
 		// const response = await axios.get(`/api/users/check-username?username=${username}`);
 		// return response.data.isUnique;
