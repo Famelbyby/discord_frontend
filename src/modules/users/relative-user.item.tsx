@@ -26,6 +26,7 @@ function ActionImage({ src, alt }: IActionImage) {
 			className="relative-user-actions__img"
 			src={src}
 			alt={alt}
+			title={alt}
 		/>
 	);
 }
