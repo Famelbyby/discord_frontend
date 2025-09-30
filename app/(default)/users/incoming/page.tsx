@@ -18,7 +18,7 @@ export default function Incomings() {
 		}
 
 		updateIncomings();
-	}, []);
+	}, [id]);
 
 	return (
 		<div className={INTER_FONT.className + ' incoming-page'}>

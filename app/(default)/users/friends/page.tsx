@@ -18,7 +18,7 @@ export default function Friends() {
 		}
 
 		updateFriends();
-	}, []);
+	}, [id]);
 
 	return (
 		<div className={INTER_FONT.className + ' friends-page'}>

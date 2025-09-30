@@ -18,7 +18,7 @@ export default function Outcomings() {
 		}
 
 		updateOutcomings();
-	}, []);
+	}, [id]);
 
 	return (
 		<div className={INTER_FONT.className + ' outcoming-page'}>
