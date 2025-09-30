@@ -19,6 +19,8 @@ export function RelativeUserItemActions(
 		case relativeUser.isOutcoming:
 			resultActions = RELATIVE_USER_ACTIONS_ICONS['outcoming'];
 			break;
+		case relativeUser.isBlocked:
+			return RELATIVE_USER_ACTIONS_ICONS['blocked'];
 		default:
 			resultActions = RELATIVE_USER_ACTIONS_ICONS['stranger'];
 	}

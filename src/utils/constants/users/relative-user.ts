@@ -34,6 +34,12 @@ export const RELATIVE_USER_ACTIONS_ICONS: Record<
 			alt: 'Отменить',
 		},
 	],
+	blocked: [
+		{
+			src: '/shared/unblock.png',
+			alt: 'Разблокировать',
+		},
+	],
 	stranger: [
 		{
 			src: '/shared/add-friend.png',
