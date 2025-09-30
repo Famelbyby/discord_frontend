@@ -21,6 +21,11 @@ export const USERS_HEADER_ITEMS: UsersHeaderItem[] = [
 		imageSrc: '/users/outcoming.png',
 		linkTo: '/outcoming',
 	},
+	{
+		title: 'Заблокированные пользователи',
+		imageSrc: '/users/block_white.png',
+		linkTo: '/blocks',
+	},
 ];
 
 export const USERS_HEADER_ITEM_WIDTH = 16;
