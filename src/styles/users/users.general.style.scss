@@ -1,0 +1,36 @@
+.users {
+	&-layout {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding: 15px;
+		align-items: start;
+	}
+
+	&-header {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		background-color: rgba(217, 217, 217, 0.1);
+		padding: 10px;
+		border-radius: 10px;
+
+		&-item {
+			display: flex;
+			column-gap: 5px;
+			align-items: center;
+			color: white;
+			padding: 3px 8px;
+			border-radius: 6px;
+
+			&__img {
+				width: 16px;
+				height: 16px;
+			}
+
+			&_selected {
+				background-color: rgba(0, 0, 0, 0.5);
+			}
+		}
+	}
+}
