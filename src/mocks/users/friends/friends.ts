@@ -1,4 +1,4 @@
-import { RelativeUser } from '@/src/utils/types/users/users';
+import { RelativeUser } from '@/src/utils/types/users/relative-user.item';
 
 export const FriendsListMock: RelativeUser[] = [
 	{

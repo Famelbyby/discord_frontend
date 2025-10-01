@@ -3,11 +3,11 @@
 import SearchInput from '@/src/core/shared/SearchInput';
 import { useEffect, useState } from 'react';
 import '@/src/styles/users/search/general.style.scss';
-import { RelativeUser } from '@/src/utils/types/users/users';
 import { GetSearchByName } from '@/src/api/users/search';
 import { SEARCH_DEBOUNCE_TIMEOUT } from '@/src/utils/constants/users/search/general';
 import { useDebounce } from '@/src/utils/hooks/shared/useDebounce';
-import RelativeUserList from '@/src/modules/users/relative-user.list';
+import RelativeUserList from '@/src/core/users/relative-user.list';
+import { RelativeUser } from '@/src/utils/types/users/relative-user.item';
 
 export default function UsersSearch() {
 	const [input, setInput] = useState('');
@@ -28,6 +28,10 @@ export default function UsersSearch() {
 		debouncedFunc(nextInput);
 	}
 
+	function changeSearchResult(newSearchResult: RelativeUser[]) {
+		setSearchResult(newSearchResult);
+	}
+
 	return (
 		<div className="search-page">
 			<SearchInput
@@ -39,7 +43,11 @@ export default function UsersSearch() {
 			<div className="search-title">
 				По вашему запросу найдены следующие пользователи:
 			</div>
-			<RelativeUserList relativeUsers={searchResult} />
+			<RelativeUserList
+				relativeUsers={searchResult}
+				changeList={changeSearchResult}
+				withRemove={false}
+			/>
 		</div>
 	);
 }

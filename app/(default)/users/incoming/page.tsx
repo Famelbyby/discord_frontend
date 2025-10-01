@@ -2,11 +2,11 @@
 
 import { GetIncomings } from '@/src/api/users/incoming';
 import { INTER_FONT } from '@/src/fonts/fonts';
-import RelativeUserList from '@/src/modules/users/relative-user.list';
+import RelativeUserList from '@/src/core/users/relative-user.list';
 import { useUserStore } from '@/src/stores/user.store';
 import '@/src/styles/users/incoming/general.style.scss';
-import { RelativeUser } from '@/src/utils/types/users/users';
 import { useEffect, useState } from 'react';
+import { RelativeUser } from '@/src/utils/types/users/relative-user.item';
 
 export default function Incomings() {
 	const [incomingList, setIncomingList] = useState<RelativeUser[]>([]);
@@ -20,10 +20,17 @@ export default function Incomings() {
 		updateIncomings();
 	}, [id]);
 
+	function changeIncomingList(newIncomingList: RelativeUser[]) {
+		setIncomingList(newIncomingList);
+	}
+
 	return (
 		<div className={INTER_FONT.className + ' incoming-page'}>
 			<div className={'incoming-page__title'}>Входящие заявки</div>
-			<RelativeUserList relativeUsers={incomingList} />
+			<RelativeUserList
+				relativeUsers={incomingList}
+				changeList={changeIncomingList}
+			/>
 		</div>
 	);
 }

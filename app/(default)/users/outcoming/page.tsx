@@ -2,10 +2,10 @@
 
 import { GetOutcomings } from '@/src/api/users/outcoming';
 import { INTER_FONT } from '@/src/fonts/fonts';
-import RelativeUserList from '@/src/modules/users/relative-user.list';
+import RelativeUserList from '@/src/core/users/relative-user.list';
 import { useUserStore } from '@/src/stores/user.store';
 import '@/src/styles/users/outcoming/general.style.scss';
-import { RelativeUser } from '@/src/utils/types/users/users';
+import { RelativeUser } from '@/src/utils/types/users/relative-user.item';
 import { useEffect, useState } from 'react';
 
 export default function Outcomings() {
@@ -20,10 +20,17 @@ export default function Outcomings() {
 		updateOutcomings();
 	}, [id]);
 
+	function changeOutcomingList(newOucomingList: RelativeUser[]) {
+		setOutcomingList(newOucomingList);
+	}
+
 	return (
 		<div className={INTER_FONT.className + ' outcoming-page'}>
 			<div className={'outcoming-page__title'}>Исходящие заявки</div>
-			<RelativeUserList relativeUsers={outcomingList} />
+			<RelativeUserList
+				relativeUsers={outcomingList}
+				changeList={changeOutcomingList}
+			/>
 		</div>
 	);
 }
