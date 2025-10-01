@@ -12,6 +12,7 @@ import {
 	OptionalRelativeUser,
 	NonRoutableRelativeUserActionIconMeaning,
 } from '../../types/users/relative-user.item';
+import { RelativeUserActions } from '../../types/users/api';
 
 export const RELATIVE_USER_ACTIONS_ICONS: Record<
 	string,
@@ -76,7 +77,7 @@ export const AVATAR_HEIGHT = 50;
 
 export const UPDATE_RELATION_ACTION_BY_MEANING: Record<
 	NonRoutableRelativeUserActionIconMeaning,
-	[(...args: any[]) => any, OptionalRelativeUser]
+	[RelativeUserActions, OptionalRelativeUser]
 > = {
 	confirm: [ConfirmIncoming, { isIncoming: false, isFriend: true }],
 	reject: [RejectIncoming, { isIncoming: false }],
