@@ -1,8 +1,8 @@
-import { RELATIVE_USER_ACTIONS_ICONS } from '../../constants/users/relative-user';
-import type {
-	RelativeUser,
+import { RELATIVE_USER_ACTIONS_ICONS } from '../../constants/users/relative-user.item';
+import {
 	IRelativeUserActionsIcon,
-} from '../../types/users/users';
+	RelativeUser,
+} from '../../types/users/relative-user.item';
 
 export function RelativeUserItemActions(
 	relativeUser: RelativeUser

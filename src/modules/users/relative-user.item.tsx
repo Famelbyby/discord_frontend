@@ -3,28 +3,26 @@ import {
 	AVATAR_WIDTH,
 	IMAGE_HEIGHT,
 	IMAGE_WIDTH,
-} from '@/src/utils/constants/users/relative-user';
-import { RelativeUser } from '@/src/utils/types/users/users';
+} from '@/src/utils/constants/users/relative-user.item';
 import Image from 'next/image';
 import '@/src/styles/users/relative-user.item.style.scss';
 import { RelativeUserItemActions } from '@/src/utils/helpers/users/relative-user.item';
-
-type RelativeUserItemProps = {
-	relativeUser: RelativeUser;
-};
+import { IRelativeUserItem } from '@/src/utils/types/users/relative-user.item';
 
 interface IActionImage {
 	src: string;
 	alt: string;
+	onClick: () => void;
 }
 
-function ActionImage({ src, alt }: IActionImage) {
+function ActionImage({ src, alt, onClick }: IActionImage) {
 	return (
 		<Image
 			width={IMAGE_WIDTH}
 			height={IMAGE_HEIGHT}
 			className="relative-user-actions__img"
 			src={src}
+			onClick={onClick}
 			alt={alt}
 		/>
 	);
@@ -32,7 +30,8 @@ function ActionImage({ src, alt }: IActionImage) {
 
 export default function RelativeUserItem({
 	relativeUser,
-}: RelativeUserItemProps) {
+	updateRelation,
+}: IRelativeUserItem) {
 	return (
 		<div className="relative-user-item">
 			<div className="relative-user-avatar">
@@ -44,7 +43,7 @@ export default function RelativeUserItem({
 					alt=""
 				/>
 				<div className="relative-user-avatar__name">
-					{relativeUser.name}
+					{relativeUser.username}
 				</div>
 			</div>
 			<div className="relative-user-actions">
@@ -53,6 +52,9 @@ export default function RelativeUserItem({
 						key={action.alt}
 						src={action.src}
 						alt={action.alt}
+						onClick={() =>
+							updateRelation(action.meaning, relativeUser.id)
+						}
 					/>
 				))}
 			</div>
