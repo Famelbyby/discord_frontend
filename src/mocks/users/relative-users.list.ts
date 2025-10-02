@@ -1,9 +1,9 @@
-import { RelativeUser } from '@/src/utils/types/users/users';
+import { RelativeUser } from '@/src/utils/types/users/relative-user.item';
 
 export const RelativeUsersListMock: RelativeUser[] = [
 	{
 		id: 'heh',
-		name: 'Lexa',
+		username: 'Lexa',
 		avatarUrl: '',
 		isFriend: true,
 		isIncoming: false,
@@ -12,7 +12,7 @@ export const RelativeUsersListMock: RelativeUser[] = [
 	},
 	{
 		id: 'heh1',
-		name: 'Andrew',
+		username: 'Andrew',
 		avatarUrl: '',
 		isFriend: false,
 		isIncoming: true,
@@ -21,7 +21,7 @@ export const RelativeUsersListMock: RelativeUser[] = [
 	},
 	{
 		id: 'heh2',
-		name: 'Stas',
+		username: 'Stas',
 		avatarUrl: '',
 		isFriend: false,
 		isIncoming: false,
@@ -29,8 +29,8 @@ export const RelativeUsersListMock: RelativeUser[] = [
 		isBlocked: false,
 	},
 	{
-		id: 'ohohoh',
-		name: 'Romchik',
+		id: 'asdkk322',
+		username: 'Yaro',
 		avatarUrl: '',
 		isFriend: false,
 		isIncoming: false,

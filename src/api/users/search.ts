@@ -10,7 +10,7 @@ export async function GetSearchByName(input: string) {
 
 	if (response.error !== undefined) {
 		return RelativeUsersListMock.filter((relativeUser) =>
-			relativeUser.name.startsWith(input)
+			relativeUser.username.startsWith(input)
 		); //mocked until backend will work
 	}
 

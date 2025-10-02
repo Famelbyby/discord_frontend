@@ -33,6 +33,8 @@
 		}
 
 		&__input {
+			display: flex;
+			flex-grow: 1;
 			color: white;
 
 			&:focus-visible {
