@@ -54,6 +54,13 @@ export const RELATIVE_USER_ACTIONS_ICONS: Record<
 			meaning: 'cancel',
 		},
 	],
+	blocked: [
+		{
+			src: '/shared/unblock.png',
+			alt: 'Разблокировать',
+			meaning: 'unblock',
+		},
+	],
 	stranger: [
 		{
 			src: '/shared/add-friend.png',

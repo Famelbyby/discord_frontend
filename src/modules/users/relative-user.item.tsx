@@ -24,6 +24,7 @@ function ActionImage({ src, alt, onClick }: IActionImage) {
 			src={src}
 			onClick={onClick}
 			alt={alt}
+			title={alt}
 		/>
 	);
 }

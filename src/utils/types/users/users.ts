@@ -2,7 +2,8 @@ export type UsersHeaderTitle =
 	| 'Поиск'
 	| 'Друзья'
 	| 'Входящие заявки'
-	| 'Исходящие заявки';
+	| 'Исходящие заявки'
+	| 'Заблокированные пользователи';
 
 export type UsersHeaderItem = {
 	title: UsersHeaderTitle;

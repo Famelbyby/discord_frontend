@@ -1,6 +1,6 @@
 import { RelativeUser } from '@/src/utils/types/users/relative-user.item';
 
-export const SearchResultMock: RelativeUser[] = [
+export const RelativeUsersListMock: RelativeUser[] = [
 	{
 		id: 'heh',
 		username: 'Lexa',
@@ -35,6 +35,6 @@ export const SearchResultMock: RelativeUser[] = [
 		isFriend: false,
 		isIncoming: false,
 		isOutcoming: false,
-		isBlocked: false,
+		isBlocked: true,
 	},
 ];
