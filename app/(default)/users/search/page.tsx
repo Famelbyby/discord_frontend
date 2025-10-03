@@ -6,7 +6,7 @@ import '@/src/styles/users/search/general.style.scss';
 import { GetSearchByName } from '@/src/api/users/search';
 import { SEARCH_DEBOUNCE_TIMEOUT } from '@/src/utils/constants/users/search/general';
 import { useDebounce } from '@/src/utils/hooks/shared/useDebounce';
-import RelativeUserList from '@/src/core/users/relative-user.list';
+import RelativeUserList from '@/src/modules/users/relative-user.list';
 import { RelativeUser } from '@/src/utils/types/users/relative-user.item';
 
 export default function UsersSearch() {

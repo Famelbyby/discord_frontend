@@ -1,7 +1,7 @@
 'use client';
 
 import { GetBlocks } from '@/src/api/users/blocks';
-import RelativeUserList from '@/src/core/users/relative-user.list';
+import RelativeUserList from '@/src/modules/users/relative-user.list';
 import { INTER_FONT } from '@/src/fonts/fonts';
 import { useUserStore } from '@/src/stores/user.store';
 import '@/src/styles/users/blocks/blocks.general.style.scss';

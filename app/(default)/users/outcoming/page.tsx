@@ -2,7 +2,7 @@
 
 import { GetOutcomings } from '@/src/api/users/outcoming';
 import { INTER_FONT } from '@/src/fonts/fonts';
-import RelativeUserList from '@/src/core/users/relative-user.list';
+import RelativeUserList from '@/src/modules/users/relative-user.list';
 import { useUserStore } from '@/src/stores/user.store';
 import '@/src/styles/users/outcoming/general.style.scss';
 import { RelativeUser } from '@/src/utils/types/users/relative-user.item';

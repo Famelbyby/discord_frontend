@@ -3,8 +3,8 @@ import {
 	RelativeUser,
 	RelativeUserActionIconMeaning,
 } from '@/src/utils/types/users/relative-user.item';
-import RelativeUserItem from '../../modules/users/relative-user.item';
-import '@/src/styles/users/relative-user.item.style.scss';
+import RelativeUserItem from '../../core/users/relative-user.item';
+import '@/src/styles/users/relative-user.list.style.scss';
 import { useUserStore } from '@/src/stores/user.store';
 import { UPDATE_RELATION_ACTION_BY_MEANING } from '@/src/utils/constants/users/relative-user.item';
 

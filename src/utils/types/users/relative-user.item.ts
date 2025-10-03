@@ -26,12 +26,6 @@ export type NonRoutableRelativeUserActionIconMeaning = Exclude<
 	'chat' | 'call'
 >;
 
-export interface IRelativeUserActionsIcon {
-	alt: string;
-	src: string;
-	meaning: RelativeUserActionIconMeaning;
-}
-
 export interface IRelativeUserItem {
 	relativeUser: RelativeUser;
 	updateRelation: (

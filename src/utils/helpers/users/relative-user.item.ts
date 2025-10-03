@@ -1,13 +1,14 @@
 import { RELATIVE_USER_ACTIONS_ICONS } from '../../constants/users/relative-user.item';
+import { IUserActionsIcon } from '../../types/shared/user.item';
 import {
-	IRelativeUserActionsIcon,
 	RelativeUser,
+	RelativeUserActionIconMeaning,
 } from '../../types/users/relative-user.item';
 
 export function RelativeUserItemActions(
 	relativeUser: RelativeUser
-): IRelativeUserActionsIcon[] {
-	let resultActions: IRelativeUserActionsIcon[];
+): IUserActionsIcon<RelativeUserActionIconMeaning>[] {
+	let resultActions: IUserActionsIcon<RelativeUserActionIconMeaning>[];
 
 	switch (true) {
 		case relativeUser.isFriend:
