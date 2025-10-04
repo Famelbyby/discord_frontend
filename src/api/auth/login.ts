@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ILoginFormData, ILoginErrors } from '@/src/utils/types/auth';
+import { FormChange } from '@/src/utils/helpers/validations/formChange';
 
 export const useLogin = () => {
 	const [formData, setFormData] = useState<ILoginFormData>({
@@ -9,21 +10,20 @@ export const useLogin = () => {
 	const [errors, setErrors] = useState<ILoginErrors>({});
 	const [isLoading] = useState(false);
 
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const { name, value } = e.target;
-		setFormData((prev) => ({
-			...prev,
-			[name]: value,
-		}));
-
-		if (errors[name as keyof ILoginErrors]) {
+	const handleChange = ((e: React.ChangeEvent<HTMLInputElement>) => {
+		FormChange(e, ({name, value}) => {
+			setFormData((prev) => ({
+				...prev,
+				[name]: value,
+			}));
+		}, (name) => {
 			setErrors((prev) => {
 				const newErrors = { ...prev };
-				delete newErrors[name as keyof ILoginErrors];
+				delete newErrors[name];
 				return newErrors;
 			});
-		}
-	};
+		})
+	});
 
 	const handleSubmit = async () => {};
 

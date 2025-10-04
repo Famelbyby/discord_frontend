@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { IFormData, IErrors } from '@/src/utils/types/auth';
+import { FormChange } from '@/src/utils/helpers/validations/formChange';
 
 export const useRegister = () => {
 	const [formData, setFormData] = useState<IFormData>({
@@ -11,21 +12,20 @@ export const useRegister = () => {
 	const [errors, setErrors] = useState<IErrors>({});
 	const [isLoading] = useState(false);
 
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const { name, value } = e.target;
-		setFormData((prev) => ({
-			...prev,
-			[name]: value,
-		}));
-
-		if (errors[name as keyof IErrors]) {
+	const handleChange = ((e: React.ChangeEvent<HTMLInputElement>) => {
+		FormChange(e, ({name, value}) => {
+			setFormData((prev) => ({
+				...prev,
+				[name]: value,
+			}));
+		}, (name) => {
 			setErrors((prev) => {
 				const newErrors = { ...prev };
-				delete newErrors[name as keyof IErrors];
+				delete newErrors[name];
 				return newErrors;
 			});
-		}
-	};
+		})
+	});
 
 	const handleSubmit = async () => {};
 

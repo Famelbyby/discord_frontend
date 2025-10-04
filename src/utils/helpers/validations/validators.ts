@@ -79,6 +79,18 @@ export const ValidateStatus = (status: string | null): string | null => {
 	return null;
 };
 
+export const ValidatePassword = (password: string): string | null => {
+	if (!password) {
+		return 'Password is required';
+	} 
+	
+	if (password.length < 6) {
+		return 'Password must be at least 6 characters long';
+	}
+	
+	return null;
+};
+
 export const ValidateUser = (userData: {
 	email: string;
 	username: string;
@@ -107,35 +119,22 @@ export const ValidateUser = (userData: {
 	return errors;
 };
 
-export const ValidateRegistrationForm = (formData: {
-	email: string;
-	username: string;
-	password: string;
-	avatar?: File | null;
-	status?: string | null;
-}): IUserValidationErrors => {
-	const errors = ValidateUser(formData);
+// export const ValidateRegistrationForm = (formData: {
+// 	email: string;
+// 	username: string;
+// 	password: string;
+// 	avatar?: File | null;
+// 	status?: string | null;
+// }): IUserValidationErrors => {
+// 	const errors = ValidateUser(formData);
 
-	if (!formData.password) {
-		errors.password = 'Password is required';
-	} else if (formData.password.length < 6) {
-		errors.password = 'Password must be at least 6 characters long';
-	}
+// 	if (!formData.password) {
+// 		errors.password = 'Password is required';
+// 	} else if (formData.password.length < 6) {
+// 		errors.password = 'Password must be at least 6 characters long';
+// 	}
 
-	return errors;
-};
+// 	return errors;
+// };
 
-export const CheckEmailUnique = async (): Promise<boolean> => {
-	return true;
-};
 
-export const CheckUsernameUnique = async (): Promise<boolean> => {
-	try {
-		// const response = await axios.get(`/api/users/check-username?username=${username}`);
-		// return response.data.isUnique;
-		return true;
-	} catch (error) {
-		console.error('Error checking username uniqueness:', error);
-		return false;
-	}
-};
