@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import React from 'react';
+import '@/src/styles/shared/search.input.style.scss';
 
 type SearchProps = {
 	title: string;
 	placeholder: string;
 	value: string;
-	changeValue: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	changeValue: (newValue: string) => void;
 };
 
 export default function SearchInput({
@@ -29,7 +30,7 @@ export default function SearchInput({
 					className="search-input__input"
 					type="text"
 					value={value}
-					onChange={changeValue}
+					onChange={(e) => changeValue(e.target.value)}
 					placeholder={placeholder}
 				/>
 			</div>

@@ -1,0 +1,26 @@
+.second-step-page {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	color: white;
+	row-gap: 20px;
+
+	&-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		&-buttons {
+			display: flex;
+			align-items: center;
+			column-gap: 20px;
+		}
+	}
+
+	&-general-rules {
+		display: flex;
+		column-gap: 17px;
+		justify-content: end;
+		padding: 0 10px;
+	}
+}

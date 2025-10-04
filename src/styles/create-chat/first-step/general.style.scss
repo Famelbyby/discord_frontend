@@ -1,0 +1,26 @@
+.first-step-page {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	color: white;
+
+	&-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: start;
+	}
+
+	&-added-contacts {
+		display: flex;
+		flex-wrap: wrap;
+		min-height: 30px;
+		column-gap: 15px;
+
+		&-wrapper {
+			margin: 20px 0 10px;
+			display: flex;
+			flex-direction: column;
+			row-gap: 10px;
+		}
+	}
+}

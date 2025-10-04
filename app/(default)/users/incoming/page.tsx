@@ -2,7 +2,7 @@
 
 import { GetIncomings } from '@/src/api/users/incoming';
 import { INTER_FONT } from '@/src/fonts/fonts';
-import RelativeUserList from '@/src/core/users/relative-user.list';
+import RelativeUserList from '@/src/modules/users/relative-user.list';
 import { useUserStore } from '@/src/stores/user.store';
 import '@/src/styles/users/incoming/general.style.scss';
 import { useEffect, useState } from 'react';

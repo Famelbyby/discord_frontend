@@ -1,0 +1,2 @@
+export const ADDED_CONTACT_AVATAR_WIDTH = 30;
+export const ADDED_CONTACT_AVATAR_HEIGHT = 30;

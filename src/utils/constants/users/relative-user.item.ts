@@ -8,15 +8,16 @@ import {
 	UnblockProfile,
 } from '@/src/api/modules/users/relative-user.item';
 import {
-	IRelativeUserActionsIcon,
 	OptionalRelativeUser,
 	NonRoutableRelativeUserActionIconMeaning,
+	RelativeUserActionIconMeaning,
 } from '../../types/users/relative-user.item';
 import { RelativeUserActions } from '../../types/users/api';
+import { IUserActionsIcon } from '../../types/shared/user.item';
 
 export const RELATIVE_USER_ACTIONS_ICONS: Record<
 	string,
-	IRelativeUserActionsIcon[]
+	IUserActionsIcon<RelativeUserActionIconMeaning>[]
 > = {
 	friend: [
 		{
@@ -77,8 +78,8 @@ export const RELATIVE_USER_ACTIONS_ICONS: Record<
 	],
 };
 
-export const IMAGE_WIDTH = 20;
-export const IMAGE_HEIGHT = 20;
+export const ACTION_IMAGE_WIDTH = 20;
+export const ACTION_IMAGE_HEIGHT = 20;
 export const AVATAR_WIDTH = 50;
 export const AVATAR_HEIGHT = 50;
 
