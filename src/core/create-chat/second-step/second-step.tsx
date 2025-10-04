@@ -1,6 +1,5 @@
 import { IStepCreateChat } from '@/src/utils/types/create-chat/step';
 import { ChangeStepButton } from '../change-step.button';
-import { title } from 'process';
 import { ParticipantList } from '../participant.list';
 import { SECOND_STEP_CHANGE_STEP_BUTTONS } from '@/src/utils/constants/create-chat/second-step/second-step';
 import '@/src/styles/create-chat/second-step/general.style.scss';
@@ -81,14 +80,17 @@ export function SecondStepCreateChat({
 		<div className="second-step-page">
 			<div className="second-step-page-header">
 				Настройка прав участников
-				{SECOND_STEP_CHANGE_STEP_BUTTONS.map((changeStepButton) => (
-					<ChangeStepButton
-						key={title}
-						action={changeStepButton.action}
-						title={changeStepButton.title}
-						changeStep={changeStep}
-					/>
-				))}
+				<div className="second-step-page-header-buttons">
+					{SECOND_STEP_CHANGE_STEP_BUTTONS.map((changeStepButton) => (
+						<ChangeStepButton
+							key={changeStepButton.title}
+							action={changeStepButton.action}
+							title={changeStepButton.title}
+							changeStep={changeStep}
+							src={changeStepButton.src}
+						/>
+					))}
+				</div>
 			</div>
 			<div className="second-step-page-general-rules">
 				{generalActions.map((action) => (

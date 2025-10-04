@@ -1,5 +1,8 @@
 import UserItem from '@/src/core/shared/user.item';
-import { FirstStepParticipantActionIconMeaning } from '@/src/utils/types/create-chat/participant.item';
+import {
+	FirstStepParticipantActionIconMeaning,
+	Participant,
+} from '@/src/utils/types/create-chat/participant.item';
 import '@/src/styles/create-chat/first-step/list.style.scss';
 import { FirstStepFriendActionIcons } from '@/src/utils/constants/create-chat/first-step/first-step.list';
 import { IFirstStepList } from '@/src/utils/types/create-chat/first-step.list';
@@ -17,7 +20,7 @@ export function FirstStepList({
 			case 'add-participant':
 				const newParticipant = friends.find(
 					(friend) => friend.id === id
-				);
+				) as Participant | undefined;
 
 				if (newParticipant === undefined) {
 					return;

@@ -50,6 +50,7 @@ export function FirstStepCreateChat({
 					action="next"
 					changeStep={changeStep}
 					title="Добавить"
+					src={'/create-chat/next-button.png'}
 				/>
 			</div>
 			<AddedContacts participants={participants} />

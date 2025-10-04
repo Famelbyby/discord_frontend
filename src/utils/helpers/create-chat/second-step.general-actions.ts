@@ -17,13 +17,13 @@ function DefineGeneralActionIcon(
 
 	if (isAllDisabled) {
 		return {
-			src: `/create-chat/enabled-${ruleToFind}.png`,
+			src: `/create-chat/disabled-${ruleToFind}.png`,
 			alt: `Разблокировать ${alt}`,
 			meaning: `enable-all-${ruleToFind}s`,
 		};
 	} else {
 		return {
-			src: `/create-chat/disabled-${ruleToFind}.png`,
+			src: `/create-chat/enabled-${ruleToFind}.png`,
 			alt: `Заблокировать ${alt}`,
 			meaning: `disable-all-${ruleToFind}s`,
 		};

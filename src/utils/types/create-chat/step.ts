@@ -6,5 +6,5 @@ export interface IStepCreateChat {
 	changeParticipants: (newParticipants: Participant[]) => void;
 }
 
-export type ChangeStep = 'next' | 'previous';
+export type ChangeStep = 'next' | 'previous' | 'create-chat';
 export type CreateChatStep = 1 | 2;

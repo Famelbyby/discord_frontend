@@ -65,7 +65,7 @@ export function ParticipantList({
 					/>
 				))}
 			{participants.length === 0 && (
-				<div className="participants-list__no-participants">
+				<div className="participant-list__no-participants">
 					Вы никого не добавили
 				</div>
 			)}
