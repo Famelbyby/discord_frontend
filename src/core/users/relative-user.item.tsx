@@ -12,6 +12,7 @@ export default function RelativeUserItem({
 	return (
 		<UserItem<RelativeUserActionIconMeaning>
 			username={relativeUser.username}
+			avatarUrl={relativeUser.avatarUrl}
 			actions={RelativeUserItemActions(relativeUser)}
 			onClick={(action) =>
 				updateRelation(action.meaning, relativeUser.id)

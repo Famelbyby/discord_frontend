@@ -78,8 +78,8 @@ export const RELATIVE_USER_ACTIONS_ICONS: Record<
 	],
 };
 
-export const IMAGE_WIDTH = 20;
-export const IMAGE_HEIGHT = 20;
+export const ACTION_IMAGE_WIDTH = 20;
+export const ACTION_IMAGE_HEIGHT = 20;
 export const AVATAR_WIDTH = 50;
 export const AVATAR_HEIGHT = 50;
 

@@ -1,7 +1,9 @@
 export interface IUserItem<T> {
 	username: string;
+	avatarUrl: string;
 	actions: IUserActionsIcon<T>[];
 	onClick: (action: IUserActionsIcon<T>) => void;
+	className?: string;
 }
 
 export interface IActionImage {

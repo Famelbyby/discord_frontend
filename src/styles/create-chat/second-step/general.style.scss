@@ -1,0 +1,13 @@
+.second-step-page {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	color: white;
+	row-gap: 20px;
+
+	&-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}

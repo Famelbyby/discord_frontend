@@ -21,9 +21,7 @@ export default function UsersSearch() {
 		debouncedFunc('');
 	}, []);
 
-	function onChangeInput(e: React.ChangeEvent<HTMLInputElement>) {
-		const nextInput = e.target.value;
-
+	function onChangeInput(nextInput: string) {
 		setInput(nextInput);
 		debouncedFunc(nextInput);
 	}
