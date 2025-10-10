@@ -1,0 +1,1 @@
+export const MAIN_IMAGE_BORDER_LENGTH = 200;

@@ -3,24 +3,24 @@ import React, { ReactNode } from 'react';
 
 interface ICustomLink {
 	href: string;
-	color?: string;
 	underlined?: boolean;
 	fontFamily?: string;
+	className?: string;
 	children: ReactNode;
 }
 
 export const CustomLink: React.FC<ICustomLink> = ({
 	underlined = false,
 	fontFamily = 'inherit',
-	color = 'inherit',
+	className = '',
 	href,
 	children,
 }) => {
 	return (
 		<Link
 			href={href}
+			className={className}
 			style={{
-				color,
 				fontFamily,
 				textDecoration: underlined ? 'underline' : '',
 			}}
