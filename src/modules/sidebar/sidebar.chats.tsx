@@ -1,4 +1,4 @@
-import SidebarItem from '@/src/core/sidebar/sidebar.item';
+import SidebarChatItem from '@/src/core/sidebar/sidebar.chat-item';
 import '@/src/styles/sidebar/sidebar.chats.style.scss';
 import { SidebarListMock } from '@/src/mocks/sidebar/chats';
 
@@ -6,14 +6,14 @@ export default function SidebarChats() {
 	const list = SidebarListMock;
 
 	return (
-		<div className="sidebar-list">
+		<div className="sidebar-chats">
 			{list.map((item) => {
 				return (
-					<SidebarItem
+					<SidebarChatItem
 						key={item.id}
 						id={item.id}
 						avatarUrl={item.avatarUrl}
-						name={item.name}
+						username={item.username}
 					/>
 				);
 			})}
