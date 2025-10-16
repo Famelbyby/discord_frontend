@@ -36,9 +36,11 @@ export default function SidebarFriendsHeader({
 					/>
 					Найти друзей
 				</div>
-				<div className="sidebar-header-incomings-count">
-					{incomingsCount}
-				</div>
+				{incomingsCount !== 0 && (
+					<div className="sidebar-header-incomings-count">
+						{incomingsCount}
+					</div>
+				)}
 			</CustomLink>
 			<CustomLink className="sidebar-header-item" href={'/create-chat'}>
 				<div className="sidebar-header-create-chat">
