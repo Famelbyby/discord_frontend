@@ -30,10 +30,7 @@ export const LoginForm: React.FC<ILoginFormProps> = ({
 	onSubmit,
 }) => {
 	return (
-		<FormContainer
-			title="Sign in to your account"
-			subtitle="Enter your credentials to access your account"
-		>
+		<FormContainer title="Sign in to your account" subtitle="">
 			<form onSubmit={onSubmit} className="auth-form">
 				{loginFields.map((field) => (
 					<FormField

@@ -42,10 +42,7 @@ export const RegisterForm: React.FC<IRegisterFormProps> = ({
 	onSubmit,
 }) => {
 	return (
-		<FormContainer
-			title="Create your account"
-			subtitle="Join us today and start your journey"
-		>
+		<FormContainer title="Create your account" subtitle="">
 			<form onSubmit={onSubmit} className="auth-form">
 				{formFields.map((field) => (
 					<FormField
