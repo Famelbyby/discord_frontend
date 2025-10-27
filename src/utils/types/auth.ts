@@ -14,7 +14,7 @@ export interface ILoginResponse {
 	refresh: string;
 }
 
-export interface IFormData {
+export interface IRegisterFormData {
 	name: string;
 	email: string;
 	password: string;
@@ -57,7 +57,7 @@ export interface IServerErrorProps {
 }
 
 export interface IRegisterFormProps {
-	formData: IFormData;
+	formData: IRegisterFormData;
 	errors: IErrors;
 	isLoading: boolean;
 	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;

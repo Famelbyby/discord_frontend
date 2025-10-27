@@ -1,26 +1,17 @@
-import { useState } from 'react';
-import { IFormData, IErrors } from '@/src/utils/types/auth';
-import { createFormChangeHandler } from '@/src/utils/helpers/validations/formChange';
+import AxiosClient from '@/src/utils/clients/axios.client';
+import { AUTH_URL } from '@/src/utils/constants/shared/URLs/api.urls';
+import { IRegisterFormData } from '@/src/utils/types/auth';
+import { UserState } from '@/src/utils/types/stores/user';
 
-export const useRegister = () => {
-	const [formData, setFormData] = useState<IFormData>({
-		name: '',
-		email: '',
-		password: '',
-		password2: '',
-	});
-	const [errors, setErrors] = useState<IErrors>({});
-	const [isLoading] = useState(false);
+export async function PostRegister(formData: IRegisterFormData) {
+	const response = await AxiosClient.post<UserState, IRegisterFormData>(
+		`${AUTH_URL}/register`,
+		formData
+	);
 
-	const handleChange = createFormChangeHandler(setFormData, setErrors);
+	if (response.error !== undefined) {
+		//тут тебе сделать
+	}
 
-	const handleSubmit = async () => {};
-
-	return {
-		formData,
-		errors,
-		isLoading,
-		handleChange,
-		handleSubmit,
-	};
-};
+	return response.data;
+}
