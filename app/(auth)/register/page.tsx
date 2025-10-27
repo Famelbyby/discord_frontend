@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { useRegister } from '@/src/api/auth/register';
+import { useRegister } from '@/src/utils/hooks/auth/register';
 import { RegisterForm } from '@/src/modules/auth/RegisterForm';
 
 function Register() {

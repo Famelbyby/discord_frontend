@@ -1,24 +1,17 @@
-import { useState } from 'react';
-import { ILoginFormData, ILoginErrors } from '@/src/utils/types/auth';
-import { createFormChangeHandler } from '@/src/utils/helpers/validations/formChange';
+import AxiosClient from '@/src/utils/clients/axios.client';
+import { AUTH_URL } from '@/src/utils/constants/shared/URLs/api.urls';
+import { ILoginFormData } from '@/src/utils/types/auth';
+import { UserState } from '@/src/utils/types/stores/user';
 
-export const useLogin = () => {
-	const [formData, setFormData] = useState<ILoginFormData>({
-		username: '',
-		password: '',
-	});
-	const [errors, setErrors] = useState<ILoginErrors>({});
-	const [isLoading] = useState(false);
+export async function PostLogin(formData: ILoginFormData) {
+	const response = await AxiosClient.post<UserState, ILoginFormData>(
+		`${AUTH_URL}/login`,
+		formData
+	);
 
-	const handleChange = createFormChangeHandler(setFormData, setErrors);
+	if (response.error !== undefined) {
+		//тут тебе сделать
+	}
 
-	const handleSubmit = async () => {};
-
-	return {
-		formData,
-		errors,
-		isLoading,
-		handleChange,
-		handleSubmit,
-	};
-};
+	return response.data;
+}

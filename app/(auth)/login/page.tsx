@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useLogin } from '@/src/api/auth/login';
+import { useLogin } from '@/src/utils/hooks/auth/login';
 import { LoginForm } from '@/src/modules/auth/LoginForm';
 
 const LoginPage: React.FC = () => {
