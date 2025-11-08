@@ -7,6 +7,15 @@ export default function SidebarChats() {
 
 	return (
 		<div className="sidebar-chats">
+			<div className="sidebar-profile">
+				<SidebarChatItem
+					key={111}
+					id={'111'}
+					avatarUrl={'/11'}
+					username={'use'}
+				/>
+			</div>
+
 			{list.map((item) => {
 				return (
 					<SidebarChatItem

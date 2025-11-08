@@ -2,6 +2,7 @@
 
 import { GetIncomings } from '@/src/api/users/incoming';
 import SidebarFriendsHeader from '@/src/core/sidebar/sidebar-friends/sidebar.header';
+import SidebarFriendsList from '@/src/core/sidebar/sidebar-friends/sidebar.list';
 import { useUserStore } from '@/src/stores/user.store';
 import '@/src/styles/sidebar/sidebar-friends/general.style.scss';
 import { useEffect, useState } from 'react';
@@ -23,6 +24,7 @@ export default function SidebarFriends() {
 	return (
 		<div className="sidebar-friends">
 			<SidebarFriendsHeader incomingsCount={incomingsCount} />
+			<SidebarFriendsList></SidebarFriendsList>
 		</div>
 	);
 }

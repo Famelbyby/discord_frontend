@@ -2,5 +2,36 @@
 	&-chats {
 		display: flex;
 		flex-direction: column;
+		width: 80px;
+		gap: 0.6em;
+		align-items: center;
+	}
+	&-profile {
+		display: flex;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+		padding-bottom: 10px;
+		width: 80px;
+		justify-content: center;
+	}
+
+	&-chat-item {
+		display: flex;
+		justify-content: center;
+		width: 60px;
+		aspect-ratio: 1 / 1;
+		align-items: center;
+		border: 1px solid white;
+		border-radius: 50%;
+		overflow: hidden;
+		&-wrapper {
+			width: 60px;
+			aspect-ratio: 1/1;
+		}
+		&__avatar {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
 	}
 }
