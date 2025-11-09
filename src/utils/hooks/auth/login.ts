@@ -5,7 +5,7 @@ import { PostLogin } from '@/src/api/auth/login';
 
 export const useLogin = () => {
 	const [formData, setFormData] = useState<ILoginFormData>({
-		username: '',
+		email: '',
 		password: '',
 	});
 	const [errors, setErrors] = useState<ILoginErrors>({});

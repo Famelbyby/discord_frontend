@@ -1,5 +1,5 @@
 export interface ILoginFormData {
-	username: string;
+	email: string;
 	password: string;
 }
 
@@ -15,7 +15,7 @@ export interface ILoginResponse {
 }
 
 export interface IRegisterFormData {
-	name: string;
+	username: string;
 	email: string;
 	password: string;
 	password2: string;
@@ -50,6 +50,7 @@ export interface ISubmitButtonProps {
 	isLoading: boolean;
 	loadingText: string;
 	defaultText: string;
+	onClick: () => void;
 }
 
 export interface IServerErrorProps {
@@ -61,12 +62,7 @@ export interface IRegisterFormProps {
 	errors: IErrors;
 	isLoading: boolean;
 	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-	onSubmit: (e: React.FormEvent) => void;
-}
-
-export interface ILoginFormData {
-	username: string;
-	password: string;
+	onSubmit: () => void;
 }
 
 export interface ILoginErrors {
@@ -80,5 +76,5 @@ export interface ILoginFormProps {
 	errors: ILoginErrors;
 	isLoading: boolean;
 	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-	onSubmit: (e: React.FormEvent) => void;
+	onSubmit: () => void;
 }

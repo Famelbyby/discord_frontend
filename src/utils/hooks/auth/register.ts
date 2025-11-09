@@ -5,7 +5,7 @@ import { PostRegister } from '@/src/api/auth/register';
 
 export const useRegister = () => {
 	const [formData, setFormData] = useState<IRegisterFormData>({
-		name: '',
+		username: '',
 		email: '',
 		password: '',
 		password2: '',

@@ -9,9 +9,9 @@ import '../../styles/auth.style.scss';
 
 const formFields = [
 	{
-		label: 'Full name',
+		label: 'Username',
 		type: 'text',
-		name: 'name',
+		name: 'username',
 		placeholder: 'John Doe',
 	},
 	{
@@ -43,7 +43,7 @@ export const RegisterForm: React.FC<IRegisterFormProps> = ({
 }) => {
 	return (
 		<FormContainer title="Create your account" subtitle="">
-			<form onSubmit={onSubmit} className="auth-form">
+			<form className="auth-form">
 				{formFields.map((field) => (
 					<FormField
 						key={field.name}
@@ -60,6 +60,7 @@ export const RegisterForm: React.FC<IRegisterFormProps> = ({
 				<ServerError message={errors.server || ''} />
 
 				<SubmitButton
+					onClick={onSubmit}
 					isLoading={isLoading}
 					loadingText="Creating account..."
 					defaultText="Register"
