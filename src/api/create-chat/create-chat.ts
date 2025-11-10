@@ -6,12 +6,25 @@ import {
 	ICreateChatResponse,
 } from '@/src/utils/types/create-chat/api';
 
-export async function CreateChat(leadId: string, users: IChatUser[]) {
+/**
+ * Создаёт чат
+ *
+ * @param leadId - id пользователя, создавшего чат
+ * @param name - название чата
+ * @param users - учатсники чата
+ * @returns
+ */
+export async function CreateChat(
+	leadId: string,
+	name: string,
+	users: IChatUser[]
+) {
 	const response = await AxiosClient.post<
 		ICreateChatResponse,
 		ICreateChatRequest
 	>(`${CHAT_URL}`, {
 		lead_id: leadId,
+		name,
 		users,
 	});
 

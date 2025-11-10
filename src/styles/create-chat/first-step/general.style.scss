@@ -10,6 +10,29 @@
 		align-items: start;
 	}
 
+	&-add-name {
+		display: flex;
+		flex-direction: column;
+		row-gap: 5px;
+		margin-top: 20px;
+		max-width: 400px;
+
+		&__input {
+			display: flex;
+			flex-grow: 1;
+			color: white;
+			background: rgba(217, 217, 217, 0.1);
+			border: 1px solid rgba(255, 255, 255, 0.8);
+			border-radius: 6px;
+			font-size: 16px;
+			padding: 5px 10px;
+
+			&:focus-visible {
+				outline: none;
+			}
+		}
+	}
+
 	&-added-contacts {
 		display: flex;
 		flex-wrap: wrap;
