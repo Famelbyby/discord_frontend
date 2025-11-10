@@ -1,6 +1,16 @@
 import Image from 'next/image';
 import '@/src/styles/sidebar/sidebar-friends/sidebar.list.style.scss';
-import type { ISidebarListItemProps } from '@/src/utils/types/sidebar/sidebar.list.item';
+import type {
+	ISidebarListItemProps,
+	IButtonConfig,
+} from '@/src/utils/types/sidebar/sidebar.list.item';
+import {
+	SIDEBAR_AVATAR_WIDTH,
+	SIDEBAR_AVATAR_HEIGHT,
+	SIDEBAR_ACTION_WIDTH,
+	SIDEBAR_ACTION_HEIGHT,
+} from '@/src/utils/constants/sidebar/sidebar.list.item';
+
 export default function SidebarListItem({
 	id,
 	avatar,
@@ -9,20 +19,29 @@ export default function SidebarListItem({
 	onCall,
 	onMessage,
 }: ISidebarListItemProps) {
-	const handleCall = () => {
-		onCall?.(id);
-	};
-
-	const handleMessage = () => {
-		onMessage?.(id);
-	};
+	const buttonConfigs: IButtonConfig[] = [
+		{
+			type: 'call',
+			src: '/shared/call.png',
+			alt: 'Позвонить',
+			className: 'sidebar-list-item-action-btn call-btn',
+			handler: () => onCall?.(id),
+		},
+		{
+			type: 'message',
+			src: '/shared/chat.png',
+			alt: 'Написать',
+			className: 'sidebar-list-item-action-btn message-btn',
+			handler: () => onMessage?.(id),
+		},
+	];
 
 	return (
 		<div className="sidebar-list-item">
 			<div className="sidebar-list-item-avatar">
 				<Image
-					width={30}
-					height={30}
+					width={SIDEBAR_AVATAR_WIDTH}
+					height={SIDEBAR_AVATAR_HEIGHT}
 					src={avatar}
 					alt={name}
 					className="sidebar-list-item-avatar__img"
@@ -37,28 +56,20 @@ export default function SidebarListItem({
 			</div>
 
 			<div className="sidebar-list-item-actions">
-				<button
-					className="sidebar-list-item-action-btn call-btn"
-					onClick={handleCall}
-				>
-					<Image
-						width={20}
-						height={20}
-						src="/shared/call.png"
-						alt="Позвонить"
-					/>
-				</button>
-				<button
-					className="sidebar-list-item-action-btn message-btn"
-					onClick={handleMessage}
-				>
-					<Image
-						width={20}
-						height={20}
-						src="/shared/chat.png"
-						alt="Написать"
-					/>
-				</button>
+				{buttonConfigs.map((button) => (
+					<button
+						key={button.type}
+						className={button.className}
+						onClick={button.handler}
+					>
+						<Image
+							width={SIDEBAR_ACTION_WIDTH}
+							height={SIDEBAR_ACTION_HEIGHT}
+							src={button.src}
+							alt={button.alt}
+						/>
+					</button>
+				))}
 			</div>
 		</div>
 	);
