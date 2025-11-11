@@ -1,0 +1,2 @@
+export const CHAT_HEADER_ACTION_WIDTH = 25;
+export const CHAT_HEADER_ACTION_HEIGHT = 25;

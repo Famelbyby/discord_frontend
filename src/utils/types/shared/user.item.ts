@@ -10,6 +10,8 @@ export interface IActionImage {
 	src: string;
 	alt: string;
 	onClick: () => void;
+	width?: number;
+	height?: number;
 }
 
 export interface IUserActionsIcon<T> {

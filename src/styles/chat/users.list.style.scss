@@ -1,0 +1,16 @@
+.chat-users-list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 5px;
+	row-gap: 7px;
+
+	&-item {
+		display: flex;
+
+		&__img {
+			border-radius: 50%;
+			cursor: pointer;
+		}
+	}
+}
