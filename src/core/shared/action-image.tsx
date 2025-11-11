@@ -10,13 +10,13 @@ export function ActionImage({
 	src,
 	alt,
 	onClick,
-	width,
-	height,
+	width = ACTION_IMAGE_WIDTH,
+	height = ACTION_IMAGE_HEIGHT,
 }: IActionImage) {
 	return (
 		<Image
-			width={width || ACTION_IMAGE_WIDTH}
-			height={height || ACTION_IMAGE_HEIGHT}
+			width={width}
+			height={height}
 			className="user-actions__img"
 			src={src}
 			onClick={onClick}
