@@ -3,17 +3,17 @@ import { ISidebarItem } from '@/src/utils/types/sidebar/sidebar.item';
 export const SidebarListMock: ISidebarItem[] = [
 	{
 		id: 'heh',
-		name: 'Lexa',
+		username: 'Lexa',
 		avatarUrl: '',
 	},
 	{
 		id: 'heh1',
-		name: 'Andrew',
+		username: 'Andrew',
 		avatarUrl: '',
 	},
 	{
 		id: 'heh2',
-		name: 'Stas',
+		username: 'Stas',
 		avatarUrl: '',
 	},
 ];

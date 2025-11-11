@@ -46,4 +46,13 @@ export const RelativeUsersListMock: RelativeUser[] = [
 		isOutcoming: false,
 		isBlocked: false,
 	},
+	{
+		id: 'AHHAHLOL',
+		username: 'Masha',
+		avatarUrl: '/users/friends.png',
+		isFriend: false,
+		isIncoming: true,
+		isOutcoming: false,
+		isBlocked: false,
+	},
 ];

@@ -1,0 +1,11 @@
+.sidebar-friends {
+	display: flex;
+	flex-direction: column;
+	color: white;
+	min-width: 200px;
+	margin-left: 20px;
+	&-list {
+		margin-top: 10px;
+		border-top: 1px solid white;
+	}
+}
