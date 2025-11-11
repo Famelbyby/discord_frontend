@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import type { UsersHeaderTitle } from '@/src/utils/types/users/users';
@@ -11,6 +10,7 @@ import {
 	USERS_HEADER_ITEMS,
 } from '@/src/utils/constants/users/users.header';
 import { USERS_URL } from '@/src/utils/constants/shared/URLs/front.urls';
+import { CustomLink } from '../shared/CustomLink';
 
 export default function UsersHeader() {
 	const location = usePathname();
@@ -24,7 +24,7 @@ export default function UsersHeader() {
 		<div className="users-header">
 			{USERS_HEADER_ITEMS.map((item) => {
 				return (
-					<Link href={USERS_URL + item.linkTo} key={item.title}>
+					<CustomLink href={USERS_URL + item.linkTo} key={item.title}>
 						<div
 							className={
 								'users-header-item' +
@@ -43,7 +43,7 @@ export default function UsersHeader() {
 							/>
 							{item.title}
 						</div>
-					</Link>
+					</CustomLink>
 				);
 			})}
 		</div>

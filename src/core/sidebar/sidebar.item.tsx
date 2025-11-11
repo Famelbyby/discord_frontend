@@ -4,12 +4,12 @@ import {
 } from '@/src/utils/constants/sidebar/sidebar.item';
 import { ISidebarItem } from '@/src/utils/types/sidebar/sidebar.item';
 import Image from 'next/image';
-import Link from 'next/link';
+import { CustomLink } from '../shared/CustomLink';
 
 export default function SidebarItem({ id, name, avatarUrl }: ISidebarItem) {
 	return (
 		<div className="sidebar-item-wrapper">
-			<Link href={`/profile/${id}`}>
+			<CustomLink href={`/profile/${id}`}>
 				<div className="sidebar-item">
 					<Image
 						className="sidebar-item__avatar"
@@ -19,7 +19,7 @@ export default function SidebarItem({ id, name, avatarUrl }: ISidebarItem) {
 						alt={name}
 					/>
 				</div>
-			</Link>
+			</CustomLink>
 		</div>
 	);
 }

@@ -1,0 +1,37 @@
+.search {
+	&-wrapper {
+		display: flex;
+		flex-direction: column;
+		row-gap: 10px;
+		color: white;
+		flex-grow: 1;
+	}
+
+	&-input {
+		display: flex;
+		column-gap: 10px;
+		background: rgba(217, 217, 217, 0.1);
+		border: 1px solid rgba(255, 255, 255, 0.8);
+		border-radius: 6px;
+		font-size: 16px;
+		padding: 5px 10px;
+		align-items: center;
+		max-width: 400px;
+
+		&__magnifier {
+			opacity: 0.8;
+			width: 16px;
+			height: 16px;
+		}
+
+		&__input {
+			display: flex;
+			flex-grow: 1;
+			color: white;
+
+			&:focus-visible {
+				outline: none;
+			}
+		}
+	}
+}
