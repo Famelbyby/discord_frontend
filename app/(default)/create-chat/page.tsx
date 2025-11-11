@@ -16,6 +16,7 @@ export default function CreateChatPage() {
 	const router = useRouter();
 	const [step, setStep] = useState<CreateChatStep>(1);
 	const [participants, setParticipants] = useState<Participant[]>([]);
+	const [name, setName] = useState('');
 
 	async function changeStep(action: ChangeStep) {
 		switch (action) {
@@ -26,7 +27,7 @@ export default function CreateChatPage() {
 				setStep(1);
 				break;
 			case 'create-chat':
-				const result = await CreateChat(id, participants);
+				const result = await CreateChat(id, name, participants);
 
 				if (result !== undefined) {
 					router.push(`${CHATS_URL}/${result}`);
@@ -34,10 +35,16 @@ export default function CreateChatPage() {
 		}
 	}
 
+	function changeName(newName: string) {
+		setName(newName);
+	}
+
 	return (
 		<div className="create-chat-page">
 			{step === 1 && (
 				<FirstStepCreateChat
+					name={name}
+					changeName={changeName}
 					changeStep={changeStep}
 					participants={participants}
 					changeParticipants={setParticipants}

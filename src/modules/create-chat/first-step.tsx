@@ -4,18 +4,21 @@ import { GetFriends } from '@/src/api/shared/friends';
 import { ChangeStepButton } from '@/src/core/create-chat/change-step.button';
 import SearchInput from '@/src/core/shared/SearchInput';
 import { useUserStore } from '@/src/stores/user.store';
-import { IStepCreateChat } from '@/src/utils/types/create-chat/step';
+import { IFirstStepCreateChat } from '@/src/utils/types/create-chat/step';
 import { RelativeUser } from '@/src/utils/types/users/relative-user.item';
 import { useEffect, useState } from 'react';
 import { FirstStepList } from './first-step.list';
 import '@/src/styles/create-chat/first-step/general.style.scss';
 import { AddedContacts } from '@/src/core/create-chat/first-step/added-contacts';
+import { MAX_CHAT_NAME_LENGTH } from '@/src/utils/constants/create-chat/first-step/first-step';
 
 export function FirstStepCreateChat({
 	changeStep,
 	participants,
 	changeParticipants,
-}: IStepCreateChat) {
+	name,
+	changeName,
+}: IFirstStepCreateChat) {
 	const { id } = useUserStore();
 	const [input, setInput] = useState('');
 	const [friends, setFriends] = useState<RelativeUser[]>([]);
@@ -51,6 +54,17 @@ export function FirstStepCreateChat({
 					changeStep={changeStep}
 					title="Добавить"
 					src={'/create-chat/next-button.png'}
+				/>
+			</div>
+			<div className="first-step-page-add-name">
+				Название чата
+				<input
+					className="first-step-page-add-name__input"
+					type="text"
+					value={name}
+					onChange={(e) => changeName(e.target.value)}
+					placeholder={'Название чата'}
+					maxLength={MAX_CHAT_NAME_LENGTH}
 				/>
 			</div>
 			<AddedContacts participants={participants} />
