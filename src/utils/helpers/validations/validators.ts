@@ -67,11 +67,7 @@ export const ValidateAvatar = (file: File | null): string | null => {
 	return null;
 };
 
-export const ValidateStatus = (status: string | null): string | null => {
-	if (!status) {
-		return null;
-	}
-
+export const ValidateStatus = (status: string): string | null => {
 	if (status.length > 150) {
 		return 'Status must not exceed 150 characters';
 	}
@@ -80,14 +76,10 @@ export const ValidateStatus = (status: string | null): string | null => {
 };
 
 export const ValidatePassword = (password: string): string | null => {
-	if (!password) {
-		return 'Password is required';
-	} 
-	
 	if (password.length < 6) {
 		return 'Password must be at least 6 characters long';
 	}
-	
+
 	return null;
 };
 
@@ -118,23 +110,3 @@ export const ValidateUser = (userData: {
 
 	return errors;
 };
-
-// export const ValidateRegistrationForm = (formData: {
-// 	email: string;
-// 	username: string;
-// 	password: string;
-// 	avatar?: File | null;
-// 	status?: string | null;
-// }): IUserValidationErrors => {
-// 	const errors = ValidateUser(formData);
-
-// 	if (!formData.password) {
-// 		errors.password = 'Password is required';
-// 	} else if (formData.password.length < 6) {
-// 		errors.password = 'Password must be at least 6 characters long';
-// 	}
-
-// 	return errors;
-// };
-
-

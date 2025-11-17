@@ -8,7 +8,8 @@
         "start": "next start",
         "lint": "eslint --fix {app,src}/**/*.{ts,tsx}",
         "prepare": "husky",
-        "test": "jest"
+        "test": "jest",
+        "test:coverage": "jest --coverage"
     },
     "lint-staged": {
         "*.{ts,tsx}": [
