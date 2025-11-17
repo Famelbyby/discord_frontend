@@ -10,7 +10,7 @@ import {
 	USERS_HEADER_ITEMS,
 } from '@/src/utils/constants/users/users.header';
 import { USERS_URL } from '@/src/utils/constants/shared/URLs/front.urls';
-import { CustomLink } from '../shared/CustomLink';
+import { CustomLink } from '../shared/custom.link';
 
 export default function UsersHeader() {
 	const location = usePathname();

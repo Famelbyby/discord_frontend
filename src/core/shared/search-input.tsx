@@ -1,13 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import '@/src/styles/shared/search.input.style.scss';
-
-type SearchProps = {
-	title: string;
-	placeholder: string;
-	value: string;
-	changeValue: (newValue: string) => void;
-};
+import { SearchProps } from '@/src/utils/types/shared/search-input';
 
 export default function SearchInput({
 	title,

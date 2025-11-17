@@ -2,7 +2,7 @@
 
 import { GetFriends } from '@/src/api/shared/friends';
 import { ChangeStepButton } from '@/src/core/create-chat/change-step.button';
-import SearchInput from '@/src/core/shared/SearchInput';
+import SearchInput from '@/src/core/shared/search-input';
 import { useUserStore } from '@/src/stores/user.store';
 import { IFirstStepCreateChat } from '@/src/utils/types/create-chat/step';
 import { RelativeUser } from '@/src/utils/types/users/relative-user.item';
