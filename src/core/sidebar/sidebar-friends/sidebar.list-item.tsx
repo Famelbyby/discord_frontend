@@ -15,7 +15,6 @@ export default function SidebarListItem({
 	id,
 	avatar,
 	name,
-	isOnline,
 	onCall,
 	onMessage,
 }: ISidebarListItemProps) {
@@ -46,9 +45,6 @@ export default function SidebarListItem({
 					alt={name}
 					className="sidebar-list-item-avatar__img"
 				/>
-				{isOnline && (
-					<div className="sidebar-list-item-online-indicator"></div>
-				)}
 			</div>
 
 			<div className="sidebar-list-item-info">

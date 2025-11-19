@@ -13,12 +13,12 @@ export default function SidebarFriends() {
 	const [incomingsCount, setIncomingsCount] = useState(0);
 	const { friends, error } = useFriends(id);
 
-	const handleCall = (id: number) => {
+	const handleCall = (id: string) => {
 		console.log('Call to friend:', id);
 		// Логика звонка
 	};
 
-	const handleMessage = (id: number) => {
+	const handleMessage = (id: string) => {
 		console.log('Message to friend:', id);
 		// Логика отправки сообщения
 	};

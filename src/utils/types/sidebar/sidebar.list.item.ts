@@ -1,23 +1,17 @@
-export interface ISidebarListItemProps {
-	id: number;
-	avatar: string;
-	name: string;
-	isOnline: boolean;
-	onCall?: (id: number) => void;
-	onMessage?: (id: number) => void;
-}
+import type { RelativeUser } from '../users/relative-user.item';
 
-export interface IFriendItem {
-	id: number;
+export interface ISidebarListItemProps {
+	id: string;
 	avatar: string;
 	name: string;
-	isOnline: boolean;
+	onCall?: (id: string) => void;
+	onMessage?: (id: string) => void;
 }
 
 export interface ISidebarFriendsListProps {
-	friends: IFriendItem[];
-	onCall?: (id: number) => void;
-	onMessage?: (id: number) => void;
+	friends: RelativeUser[];
+	onCall?: (id: string) => void;
+	onMessage?: (id: string) => void;
 }
 
 export interface IButtonConfig {
