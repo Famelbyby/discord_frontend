@@ -1,7 +1,7 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import { API_URL } from '../constants/shared/URLs/api.urls';
 import { AxiosClientResponse } from '../types/clients/axios.client';
-import { SERVER_ERROR } from '../constants/shared/api.codes';
+import { CODE_SERVER } from '../constants/shared/api.codes';
 
 type MethodType = 'get' | 'post' | 'delete' | 'put';
 
@@ -55,7 +55,7 @@ class _AxiosClient {
 			error = error as AxiosError;
 
 			return <AxiosClientResponse<T>>{
-				status: error.status | SERVER_ERROR,
+				status: error.status | CODE_SERVER,
 				data: undefined,
 				error: error.message,
 			};

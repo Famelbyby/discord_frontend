@@ -6,9 +6,15 @@ export const SubmitButton: React.FC<ISubmitButtonProps> = ({
 	isLoading,
 	loadingText,
 	defaultText,
+	onClick,
 }) => {
 	return (
-		<button type="submit" disabled={isLoading} className="submit-button">
+		<button
+			type="button"
+			onClick={onClick}
+			disabled={isLoading}
+			className="submit-button"
+		>
 			{isLoading ? loadingText : defaultText}
 		</button>
 	);

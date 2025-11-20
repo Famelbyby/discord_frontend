@@ -1,7 +1,7 @@
 'use client';
 
-import { useRegister } from '@/src/api/auth/register';
 import { RegisterForm } from '@/src/modules/auth/RegisterForm';
+import { useRegister } from '@/src/utils/hooks/auth/register';
 
 function Register() {
 	const { formData, errors, isLoading, handleChange, handleSubmit } =

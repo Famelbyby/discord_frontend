@@ -6,13 +6,14 @@ import { ServerError } from '../../core/auth/ServerError';
 import { FormContainer } from '../../core/auth/FormContainer';
 import { ILoginForm } from '@/src/utils/types/auth';
 import '../../styles/auth.style.scss';
+import { REGISTER_URL } from '@/src/utils/constants/shared/URLs/front.urls';
 
 const loginFields = [
 	{
-		label: 'Username or Email',
-		type: 'text',
-		name: 'username',
-		placeholder: 'Enter your username or email',
+		label: 'Email',
+		type: 'email',
+		name: 'email',
+		placeholder: 'Enter your email',
 	},
 	{
 		label: 'Password',
@@ -31,7 +32,7 @@ export const LoginForm: React.FC<ILoginForm> = ({
 }) => {
 	return (
 		<FormContainer title="Sign in to your account" subtitle="">
-			<form onSubmit={onSubmit} className="auth-form">
+			<form className="auth-form">
 				{loginFields.map((field) => (
 					<FormField
 						key={field.name}
@@ -45,18 +46,19 @@ export const LoginForm: React.FC<ILoginForm> = ({
 					/>
 				))}
 
-				<div className="auth-form__options">
+				{/* <div className="auth-form__options">
 					<Link
 						href="/forgot-password"
 						className="auth-form__link auth-form__link--small"
 					>
 						Forgot password?
 					</Link>
-				</div>
+				</div> */}
 
 				<ServerError message={errors.server || ''} />
 
 				<SubmitButton
+					onClick={onSubmit}
 					isLoading={isLoading}
 					loadingText="Signing in..."
 					defaultText="Sign in"
@@ -65,7 +67,7 @@ export const LoginForm: React.FC<ILoginForm> = ({
 
 			<p className="auth-form__footer">
 				Dont have an account?{' '}
-				<Link href="/register" className="auth-form__link">
+				<Link href={REGISTER_URL} className="auth-form__link">
 					Register now
 				</Link>
 			</p>
