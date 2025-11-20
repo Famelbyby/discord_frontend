@@ -9,7 +9,11 @@ export async function PostLogin(formData: ILoginFormData) {
 	);
 
 	if (response.error !== undefined) {
-		//тут тебе сделать
+		throw new Error(response.error || 'Login failed');
+	}
+
+	if (!response.data) {
+		throw new Error('No data received from server');
 	}
 
 	return response.data;
