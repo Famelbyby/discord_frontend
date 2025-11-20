@@ -19,32 +19,38 @@ const config: Config = {
 	clearMocks: true,
 
 	// Indicates whether the coverage information should be collected while executing the test
-	collectCoverage: true,
+	// collectCoverage: true,
 
 	// An array of glob patterns indicating a set of files for which coverage information should be collected
-	collectCoverageFrom: ['app/**/*.{ts,tsx}', 'src/**/*.{ts,tsx}'],
+	collectCoverageFrom: ['**/*.{ts,tsx}'],
 
 	// The directory where Jest should output its coverage files
 	coverageDirectory: 'coverage',
 
 	// An array of regexp pattern strings used to skip coverage collection
-	coveragePathIgnorePatterns: ['/node_modules/'],
+	coveragePathIgnorePatterns: [
+		'/utils/(types|constants)/',
+		'/mocks',
+		'/fonts',
+		'/.next',
+		'/*.config.ts',
+		'next-env.d.ts',
+		'/src/api',
+	],
 
 	// Indicates which provider should be used to instrument code for coverage
 	coverageProvider: 'v8',
 
 	// A list of reporter names that Jest uses when writing coverage reports
-	coverageReporters: ['json', 'text', 'lcov', 'clover'],
+	// coverageReporters: [
+	//   "json",
+	//   "text",
+	//   "lcov",
+	//   "clover"
+	// ],
 
 	// An object that configures minimum threshold enforcement for coverage results
-	coverageThreshold: {
-		global: {
-			branches: 0,
-			functions: 0,
-			lines: 0,
-			statements: 0,
-		},
-	},
+	// coverageThreshold: undefined,
 
 	// A path to a custom dependency extractor
 	// dependencyExtractor: undefined,
@@ -78,10 +84,24 @@ const config: Config = {
 	// ],
 
 	// An array of file extensions your modules use
-	moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
+	// moduleFileExtensions: [
+	//   "js",
+	//   "mjs",
+	//   "cjs",
+	//   "jsx",
+	//   "ts",
+	//   "mts",
+	//   "cts",
+	//   "tsx",
+	//   "json",
+	//   "node"
+	// ],
 
 	// A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-	// moduleNameMapper: {},
+	moduleNameMapper: {
+		'^@/(.*)\.(css|less|scss|sass)$': 'identity-obj-proxy',
+		'^@/src/(.*)$': '<rootDir>/src/$1',
+	},
 
 	// An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
 	// modulePathIgnorePatterns: [],
@@ -93,7 +113,7 @@ const config: Config = {
 	// notifyMode: "failure-change",
 
 	// A preset that is used as a base for Jest's configuration
-	// preset: undefined,
+	preset: 'ts-jest',
 
 	// Run tests from one or more projects
 	// projects: undefined,
@@ -117,9 +137,7 @@ const config: Config = {
 	// rootDir: undefined,
 
 	// A list of paths to directories that Jest should use to search for files in
-	// roots: [
-	//   "<rootDir>"
-	// ],
+	roots: ['<rootDir>'],
 
 	// Allows you to use a custom runner instead of Jest's default test runner
 	// runner: "jest-runner",
@@ -128,7 +146,7 @@ const config: Config = {
 	// setupFiles: [],
 
 	// A list of paths to modules that run some code to configure or set up the testing framework before each test
-	// setupFilesAfterEnv: [],
+	setupFilesAfterEnv: ['<rootDir>/tests/setupTests.ts'],
 
 	// The number of seconds after which a test is considered as slow and reported as such in the results.
 	// slowTestThreshold: 5,
@@ -146,10 +164,10 @@ const config: Config = {
 	// testLocationInResults: false,
 
 	// The glob patterns Jest uses to detect test files
-	// testMatch: [
-	//   "**/__tests__/**/*.?([mc])[jt]s?(x)",
-	//   "**/?(*.)+(spec|test).?([mc])[jt]s?(x)"
-	// ],
+	testMatch: [
+		'**/__tests__/**/*.?([mc])[jt]s?(x)',
+		'**/?(*.)+(spec|test).?([mc])[jt]s?(x)',
+	],
 
 	// An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
 	// testPathIgnorePatterns: [
@@ -166,9 +184,9 @@ const config: Config = {
 	// testRunner: "jest-circus/runner",
 
 	// A map from regular expressions to paths to transformers
-	// transform: {
-	//   "\\.[jt]sx?$": "ts-jest"
-	// },
+	transform: {
+		'^.+\\.(ts|tsx)$': 'ts-jest',
+	},
 
 	// An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
 	// transformIgnorePatterns: [

@@ -1,6 +1,6 @@
 'use client';
 
-import SearchInput from '@/src/core/shared/SearchInput';
+import SearchInput from '@/src/core/shared/search-input';
 import { useEffect, useState } from 'react';
 import '@/src/styles/users/search/general.style.scss';
 import { GetSearchByName } from '@/src/api/users/search';

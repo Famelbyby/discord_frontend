@@ -1,0 +1,4 @@
+export const SIDEBAR_AVATAR_WIDTH = 30;
+export const SIDEBAR_AVATAR_HEIGHT = 30;
+export const SIDEBAR_ACTION_WIDTH = 20;
+export const SIDEBAR_ACTION_HEIGHT = 20;

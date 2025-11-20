@@ -7,9 +7,13 @@ export interface IChatUser {
 
 export interface ICreateChatRequest {
 	lead_id: string;
+	name: string;
 	users: IChatUser[];
 }
 
 export interface ICreateChatResponse {
 	chatId: string;
+	lead_id: string;
+	name: string;
+	users: IChatUser[];
 }

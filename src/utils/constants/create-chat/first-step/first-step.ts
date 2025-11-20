@@ -1,2 +1,3 @@
 export const ADDED_CONTACT_AVATAR_WIDTH = 30;
 export const ADDED_CONTACT_AVATAR_HEIGHT = 30;
+export const MAX_CHAT_NAME_LENGTH = 100;

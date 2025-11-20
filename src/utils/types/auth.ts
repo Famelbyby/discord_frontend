@@ -71,7 +71,7 @@ export interface ILoginErrors {
 	server?: string;
 }
 
-export interface ILoginFormProps {
+export interface ILoginForm {
 	formData: ILoginFormData;
 	errors: ILoginErrors;
 	isLoading: boolean;

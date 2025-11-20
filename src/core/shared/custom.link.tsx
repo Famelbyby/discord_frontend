@@ -1,13 +1,6 @@
+import { ICustomLink } from '@/src/utils/types/shared/custom.link';
 import Link from 'next/link';
-import React, { ReactNode } from 'react';
-
-interface ICustomLink {
-	href: string;
-	underlined?: boolean;
-	fontFamily?: string;
-	className?: string;
-	children: ReactNode;
-}
+import React from 'react';
 
 export const CustomLink: React.FC<ICustomLink> = ({
 	underlined = false,

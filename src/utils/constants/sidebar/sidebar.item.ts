@@ -1,2 +1,2 @@
-export const SIDEBAR_AVATAR_WIDTH = 30;
-export const SIDEBAR_AVATAR_HEIGHT = 30;
+export const SIDEBAR_AVATAR_WIDTH = 60;
+export const SIDEBAR_AVATAR_HEIGHT = 60;

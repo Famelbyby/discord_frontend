@@ -4,6 +4,7 @@ import SidebarChats from '@/src/modules/sidebar/sidebar.list';
 import '../globals.css';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import SidebarFriends from '@/src/modules/sidebar/sidebar.friends';
 
 export default function RootLayout({
 	children,
@@ -31,12 +32,13 @@ export default function RootLayout({
 	}, [router]);
 
 	return (
-		<html lang="en">
+		<html lang="ru">
 			<body>
 				{isRegistered === undefined && <div className="loading"></div>}
 				{isRegistered !== undefined && isRegistered && (
 					<>
 						<SidebarChats />
+            <SidebarFriends />
 						{children}
 					</>
 				)}

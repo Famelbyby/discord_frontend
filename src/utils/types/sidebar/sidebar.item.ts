@@ -1,5 +1,5 @@
-export interface ISidebarItem {
+export interface ISidebarChatItem {
 	id: string;
 	avatarUrl: string;
-	name: string;
+	username: string;
 }
