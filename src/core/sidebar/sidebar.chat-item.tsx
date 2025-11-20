@@ -2,7 +2,7 @@ import {
 	SIDEBAR_AVATAR_HEIGHT,
 	SIDEBAR_AVATAR_WIDTH,
 } from '@/src/utils/constants/sidebar/sidebar.item';
-import { ISidebarItem } from '@/src/utils/types/sidebar/sidebar.item';
+import { ISidebarChatItem } from '@/src/utils/types/sidebar/sidebar.item';
 import Image from 'next/image';
 import { CustomLink } from '../shared/custom.link';
 
@@ -10,7 +10,7 @@ export default function SidebarChatItem({
 	id,
 	username,
 	avatarUrl,
-}: ISidebarItem) {
+}: ISidebarChatItem) {
 	return (
 		<div className="sidebar-chat-item-wrapper">
 			<CustomLink href={`/profile/${id}`}>

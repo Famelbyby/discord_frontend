@@ -1,14 +1,14 @@
 import type { RelativeUser } from '../users/relative-user.item';
 
-export interface ISidebarListItemProps {
+export interface ISidebarListItem {
 	id: string;
-	avatar: string;
-	name: string;
+	avatarUrl: string;
+	username: string;
 	onCall?: (id: string) => void;
 	onMessage?: (id: string) => void;
 }
 
-export interface ISidebarFriendsListProps {
+export interface ISidebarFriendsList {
 	friends: RelativeUser[];
 	onCall?: (id: string) => void;
 	onMessage?: (id: string) => void;

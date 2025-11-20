@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { useRegister } from '@/src/api/auth/register';
 import { RegisterForm } from '@/src/modules/auth/RegisterForm';
 

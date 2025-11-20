@@ -1,14 +1,14 @@
 import SidebarChatItem from '@/src/core/sidebar/sidebar.chat-item';
-import { ISidebarItem } from '@/src/utils/types/sidebar/sidebar.item';
+import { ISidebarChatItem } from '@/src/utils/types/sidebar/sidebar.item';
 import { render, screen } from '@testing-library/react';
 
-const defaultProps: ISidebarItem = {
+const defaultProps: ISidebarChatItem = {
 	avatarUrl: '/shared/block.png',
 	id: '1',
 	username: 'ahah',
 };
 
-describe('sidebar item', () => {
+describe('sidebar chat item', () => {
 	test('renders main sections', () => {
 		const { container } = render(<SidebarChatItem {...defaultProps} />);
 
