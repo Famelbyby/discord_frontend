@@ -22,7 +22,7 @@ export interface IRegisterFormData {
 }
 
 export interface IErrors {
-	name?: string;
+	username?: string;
 	email?: string;
 	password?: string;
 	password2?: string;

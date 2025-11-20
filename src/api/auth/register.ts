@@ -9,7 +9,7 @@ export async function PostRegister(formData: IRegisterFormData) {
 	);
 
 	if (response.error !== undefined) {
-		//тут тебе сделать
+		throw [response.status, response.error];
 	}
 
 	return response.data;

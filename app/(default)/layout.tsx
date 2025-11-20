@@ -1,24 +1,45 @@
+'use client';
+
 import SidebarChats from '@/src/modules/sidebar/sidebar.list';
 import '../globals.css';
-import { cookies } from 'next/headers';
-import { redirect } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
-export default async function RootLayout({
+export default function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	const cookieStore = await cookies();
-	const token = cookieStore.get('authToken')?.value;
+	// const {updateUser} = useUserStore();
+	const router = useRouter();
+	const [isRegistered, setIsRegistered] = useState<boolean | undefined>();
 
-	if (!token) {
-		redirect('/login');
-	}
+	useEffect(() => {
+		async function updateIsRegistered() {
+			// const response = await IsRegistered();
+
+			// if (response === undefined) {
+			// 	router.push(LOGIN_URL);
+			// } else {
+			// 	updateUser(response);
+			// } пока нет сессий на бэке - выключу
+
+			setIsRegistered(true);
+		}
+
+		updateIsRegistered();
+	}, [router]);
+
 	return (
 		<html lang="en">
 			<body>
-				<SidebarChats />
-				{children}
+				{isRegistered === undefined && <div className="loading"></div>}
+				{isRegistered !== undefined && isRegistered && (
+					<>
+						<SidebarChats />
+						{children}
+					</>
+				)}
 			</body>
 		</html>
 	);

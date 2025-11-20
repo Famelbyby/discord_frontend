@@ -6,6 +6,7 @@ import { ServerError } from '../../core/auth/ServerError';
 import { FormContainer } from '../../core/auth/FormContainer';
 import { ILoginFormProps } from '@/src/utils/types/auth';
 import '../../styles/auth.style.scss';
+import { REGISTER_URL } from '@/src/utils/constants/shared/URLs/front.urls';
 
 const loginFields = [
 	{
@@ -66,7 +67,7 @@ export const LoginForm: React.FC<ILoginFormProps> = ({
 
 			<p className="auth-form__footer">
 				Dont have an account?{' '}
-				<Link href="/register" className="auth-form__link">
+				<Link href={REGISTER_URL} className="auth-form__link">
 					Register now
 				</Link>
 			</p>
