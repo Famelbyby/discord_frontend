@@ -1,10 +1,10 @@
 'use client';
 
-import SidebarChats from '@/src/modules/sidebar/sidebar.list';
 import '../globals.css';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import SidebarFriends from '@/src/modules/sidebar/sidebar.friends';
+import SidebarChats from '@/src/modules/sidebar/sidebar.chats';
 
 export default function RootLayout({
 	children,
@@ -38,7 +38,7 @@ export default function RootLayout({
 				{isRegistered !== undefined && isRegistered && (
 					<>
 						<SidebarChats />
-            <SidebarFriends />
+						<SidebarFriends />
 						{children}
 					</>
 				)}
