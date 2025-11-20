@@ -8,7 +8,7 @@ import { USERS_URL } from '@/src/utils/constants/shared/URLs/front.urls';
 import { IChatUsersList } from '@/src/utils/types/chat/users.list';
 import Image from 'next/image';
 import '@/src/styles/chat/users.list.style.scss';
-import { CustomLink } from '../shared/CustomLink';
+import { CustomLink } from '../shared/custom.link';
 
 export default function ChatUsersList({ lead_id, users }: IChatUsersList) {
 	return (
