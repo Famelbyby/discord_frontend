@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { CustomLink } from '../../shared/CustomLink';
 import {
 	SIDEBAR_HEADER_LOGO_WIDTH,
 	SIDEBAR_HEADER_LOGO_HEIGHT,
@@ -9,6 +8,7 @@ import {
 import { ISidebarFriendsHeader } from '@/src/utils/types/sidebar/sidebar.header';
 import '@/src/styles/sidebar/sidebar-friends/sidebar.header.style.scss';
 import { JURA_FONT } from '@/src/fonts/fonts';
+import { CustomLink } from '../../shared/custom.link';
 
 export default function SidebarFriendsHeader({
 	incomingsCount,

@@ -6,7 +6,7 @@ import {
 	DeleteFriend,
 	RejectIncoming,
 	UnblockProfile,
-} from '@/src/api/modules/users/relative-user.item';
+} from '@/src/api/users/relative-user.item';
 import {
 	OptionalRelativeUser,
 	NonRoutableRelativeUserActionIconMeaning,

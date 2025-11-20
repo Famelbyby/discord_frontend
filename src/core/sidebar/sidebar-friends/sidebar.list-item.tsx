@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import '@/src/styles/sidebar/sidebar-friends/sidebar.list.style.scss';
 import type {
-	ISidebarListItemProps,
 	IButtonConfig,
+	ISidebarListItem,
 } from '@/src/utils/types/sidebar/sidebar.list.item';
 import {
 	SIDEBAR_AVATAR_WIDTH,
@@ -13,11 +13,11 @@ import {
 
 export default function SidebarListItem({
 	id,
-	avatar,
-	name,
+	avatarUrl,
+	username,
 	onCall,
 	onMessage,
-}: ISidebarListItemProps) {
+}: ISidebarListItem) {
 	const buttonConfigs: IButtonConfig[] = [
 		{
 			type: 'call',
@@ -41,14 +41,14 @@ export default function SidebarListItem({
 				<Image
 					width={SIDEBAR_AVATAR_WIDTH}
 					height={SIDEBAR_AVATAR_HEIGHT}
-					src={avatar}
-					alt={name}
+					src={avatarUrl}
+					alt={username}
 					className="sidebar-list-item-avatar__img"
 				/>
 			</div>
 
 			<div className="sidebar-list-item-info">
-				<span className="sidebar-list-item-name">{name}</span>
+				<span className="sidebar-list-item-name">{username}</span>
 			</div>
 
 			<div className="sidebar-list-item-actions">

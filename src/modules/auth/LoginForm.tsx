@@ -4,7 +4,7 @@ import { FormField } from '../../core/auth/Form';
 import { SubmitButton } from '../../core/auth/SubmitButton';
 import { ServerError } from '../../core/auth/ServerError';
 import { FormContainer } from '../../core/auth/FormContainer';
-import { ILoginFormProps } from '@/src/utils/types/auth';
+import { ILoginForm } from '@/src/utils/types/auth';
 import '../../styles/auth.style.scss';
 
 const loginFields = [
@@ -22,7 +22,7 @@ const loginFields = [
 	},
 ] as const;
 
-export const LoginForm: React.FC<ILoginFormProps> = ({
+export const LoginForm: React.FC<ILoginForm> = ({
 	formData,
 	errors,
 	isLoading,

@@ -2,7 +2,7 @@ import { INTER_FONT } from '@/src/fonts/fonts';
 import { USERS_URL } from '@/src/utils/constants/shared/URLs/front.urls';
 import Image from 'next/image';
 import '@/src/styles/main/general.style.scss';
-import { CustomLink } from '@/src/core/shared/CustomLink';
+import { CustomLink } from '@/src/core/shared/custom.link';
 import { MAIN_IMAGE_BORDER_LENGTH } from '@/src/utils/constants/main/main.page';
 
 export default function MainPage() {
