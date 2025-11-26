@@ -7,7 +7,7 @@ import { PROFILE_URL } from '../../constants/shared/URLs/front.urls';
 import { useRouter } from 'next/navigation';
 import {
 	CODE_BAD_REQUEST,
-	CODE_SERVER,
+	CODE_SERVER_ERROR,
 } from '../../constants/shared/api.codes';
 
 export const useRegister = () => {
@@ -15,9 +15,10 @@ export const useRegister = () => {
 	const router = useRouter();
 	const [formData, setFormData] = useState<IRegisterFormData>({
 		username: '',
-		email: '',
+		mail: '',
 		password: '',
 		password2: '',
+		status: '',
 	});
 	const [errors, setErrors] = useState<IErrors>({});
 	const [isLoading, setIsLoading] = useState(false);
@@ -36,7 +37,7 @@ export const useRegister = () => {
 			const [status, reason] = error as [number, string];
 
 			switch (status) {
-				case CODE_SERVER:
+				case CODE_SERVER_ERROR:
 					setErrors({ ...errors, server: 'Ошибка сервера' });
 					break;
 				case CODE_BAD_REQUEST:

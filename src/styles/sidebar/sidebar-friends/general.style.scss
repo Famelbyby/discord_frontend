@@ -4,8 +4,16 @@
 	color: white;
 	min-width: 200px;
 	margin-left: 20px;
+
 	&-list {
 		margin-top: 10px;
 		border-top: 1px solid white;
+
+		&__no-friends {
+			display: flex;
+			justify-content: center;
+			opacity: 0.8;
+			padding-top: 20px;
+		}
 	}
 }

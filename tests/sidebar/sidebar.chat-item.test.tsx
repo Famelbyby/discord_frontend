@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react';
 const defaultProps: ISidebarChatItem = {
 	avatarUrl: '/shared/block.png',
 	id: '1',
-	username: 'ahah',
+	name: 'ahah',
 };
 
 describe('sidebar chat item', () => {

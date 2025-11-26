@@ -1,5 +1,5 @@
 export interface ILoginFormData {
-	email: string;
+	mail: string;
 	password: string;
 }
 
@@ -16,9 +16,10 @@ export interface ILoginResponse {
 
 export interface IRegisterFormData {
 	username: string;
-	email: string;
+	mail: string;
 	password: string;
 	password2: string;
+	status: string;
 }
 
 export interface IErrors {

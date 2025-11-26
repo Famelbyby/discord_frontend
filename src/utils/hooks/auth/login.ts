@@ -7,14 +7,14 @@ import { useRouter } from 'next/navigation';
 import {
 	CODE_BAD_REQUEST,
 	CODE_NOT_FOUND,
-	CODE_SERVER,
+	CODE_SERVER_ERROR,
 } from '../../constants/shared/api.codes';
 
 export const useLogin = () => {
 	const router = useRouter();
 	const { updateUser } = useUserStore();
 	const [formData, setFormData] = useState<ILoginFormData>({
-		email: '',
+		mail: '',
 		password: '',
 	});
 	const [errors, setErrors] = useState<ILoginErrors>({});
@@ -34,7 +34,7 @@ export const useLogin = () => {
 			const status = error as number;
 
 			switch (status) {
-				case CODE_SERVER:
+				case CODE_SERVER_ERROR:
 					setErrors({ ...errors, server: 'Ошибка сервера' });
 					break;
 				case CODE_BAD_REQUEST:

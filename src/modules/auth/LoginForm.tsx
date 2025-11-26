@@ -7,21 +7,7 @@ import { FormContainer } from '../../core/auth/FormContainer';
 import { ILoginForm } from '@/src/utils/types/auth';
 import '../../styles/auth.style.scss';
 import { REGISTER_URL } from '@/src/utils/constants/shared/URLs/front.urls';
-
-const loginFields = [
-	{
-		label: 'Email',
-		type: 'email',
-		name: 'email',
-		placeholder: 'Enter your email',
-	},
-	{
-		label: 'Password',
-		type: 'password',
-		name: 'password',
-		placeholder: '••••••••',
-	},
-] as const;
+import { LOGIN_FIELDS } from '@/src/utils/constants/auth/login';
 
 export const LoginForm: React.FC<ILoginForm> = ({
 	formData,
@@ -33,7 +19,7 @@ export const LoginForm: React.FC<ILoginForm> = ({
 	return (
 		<FormContainer title="Sign in to your account" subtitle="">
 			<form className="auth-form">
-				{loginFields.map((field) => (
+				{LOGIN_FIELDS.map((field) => (
 					<FormField
 						key={field.name}
 						label={field.label}

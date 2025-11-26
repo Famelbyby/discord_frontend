@@ -7,33 +7,7 @@ import { FormContainer } from '../../core/auth/FormContainer';
 import { IRegisterFormProps } from '@/src/utils/types/auth';
 import '../../styles/auth.style.scss';
 import { LOGIN_URL } from '@/src/utils/constants/shared/URLs/front.urls';
-
-const formFields = [
-	{
-		label: 'Username',
-		type: 'text',
-		name: 'username',
-		placeholder: 'John Doe',
-	},
-	{
-		label: 'Email address',
-		type: 'email',
-		name: 'email',
-		placeholder: 'email@example.com',
-	},
-	{
-		label: 'Password',
-		type: 'password',
-		name: 'password',
-		placeholder: '••••••••',
-	},
-	{
-		label: 'Confirm Password',
-		type: 'password',
-		name: 'password2',
-		placeholder: '••••••••',
-	},
-] as const;
+import { REGISTER_FIELDS } from '@/src/utils/constants/auth/register';
 
 export const RegisterForm: React.FC<IRegisterFormProps> = ({
 	formData,
@@ -45,7 +19,7 @@ export const RegisterForm: React.FC<IRegisterFormProps> = ({
 	return (
 		<FormContainer title="Create your account" subtitle="">
 			<form className="auth-form">
-				{formFields.map((field) => (
+				{REGISTER_FIELDS.map((field) => (
 					<FormField
 						key={field.name}
 						label={field.label}

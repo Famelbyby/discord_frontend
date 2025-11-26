@@ -8,19 +8,20 @@ import { CustomLink } from '../shared/custom.link';
 
 export default function SidebarChatItem({
 	id,
-	username,
+	name,
 	avatarUrl,
 }: ISidebarChatItem) {
 	return (
 		<div className="sidebar-chat-item-wrapper">
-			<CustomLink href={`/profile/${id}`}>
+			<CustomLink href={`/chat/${id}`}>
 				<div className="sidebar-chat-item">
 					<Image
 						className="sidebar-chat-item__avatar"
 						width={SIDEBAR_AVATAR_WIDTH}
 						height={SIDEBAR_AVATAR_HEIGHT}
 						src={avatarUrl}
-						alt={username}
+						alt={name}
+						title={name}
 					/>
 				</div>
 			</CustomLink>

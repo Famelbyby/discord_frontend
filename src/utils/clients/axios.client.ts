@@ -1,9 +1,10 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import { API_URL } from '../constants/shared/URLs/api.urls';
 import { AxiosClientResponse } from '../types/clients/axios.client';
-import { CODE_SERVER } from '../constants/shared/api.codes';
+import { CODE_SERVER_ERROR } from '../constants/shared/api.codes';
 
 type MethodType = 'get' | 'post' | 'delete' | 'put';
+type ContentType = 'multipart/form-data' | 'application/json';
 
 function RestructureResponse<T>(resp: AxiosResponse) {
 	return <AxiosClientResponse<T>>{
@@ -22,7 +23,8 @@ class _AxiosClient {
 	private async method<T, G = unknown>(
 		type: MethodType,
 		url: string,
-		data?: G
+		data?: G,
+		contentType?: ContentType
 	): Promise<AxiosClientResponse<T>> {
 		try {
 			switch (type) {
@@ -36,6 +38,10 @@ class _AxiosClient {
 					return RestructureResponse<T>(
 						await axios.post(this.baseUrl + url, data, {
 							withCredentials: true,
+							headers: {
+								'Content-Type':
+									contentType || 'application/json',
+							},
 						})
 					);
 				case 'put':
@@ -55,7 +61,7 @@ class _AxiosClient {
 			error = error as AxiosError;
 
 			return <AxiosClientResponse<T>>{
-				status: error.status | CODE_SERVER,
+				status: error.status | CODE_SERVER_ERROR,
 				data: undefined,
 				error: error.message,
 			};
@@ -80,10 +86,11 @@ class _AxiosClient {
 	 * @template G - тип передаваемой data
 	 * @param url - URL ручки
 	 * @param data - data для тела запроса
+	 * @param contentType - Coontent type запроса
 	 * @returns
 	 */
-	post<T, G>(url: string, data: G) {
-		return this.method<T>('post', url, data);
+	post<T, G>(url: string, data: G, contentType?: ContentType) {
+		return this.method<T>('post', url, data, contentType);
 	}
 
 	/**

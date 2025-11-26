@@ -2,6 +2,13 @@ import React from 'react';
 import { IFormFieldProps } from '@/src/utils/types/auth';
 import '../../styles/auth.style.scss';
 
+export type FormField<T> = {
+	label: string;
+	type: string;
+	name: keyof T;
+	placeholder: string;
+};
+
 export const FormField: React.FC<IFormFieldProps> = ({
 	label,
 	type,

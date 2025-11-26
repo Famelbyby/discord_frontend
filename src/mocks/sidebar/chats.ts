@@ -3,17 +3,17 @@ import { ISidebarChatItem } from '@/src/utils/types/sidebar/sidebar.item';
 export const SidebarListMock: ISidebarChatItem[] = [
 	{
 		id: 'heh',
-		username: 'Lexa',
+		name: 'Lexa',
 		avatarUrl: '',
 	},
 	{
 		id: 'heh1',
-		username: 'Andrew',
+		name: 'Andrew',
 		avatarUrl: '',
 	},
 	{
 		id: 'heh2',
-		username: 'Stas',
+		name: 'Stas',
 		avatarUrl: '',
 	},
 ];
