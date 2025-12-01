@@ -1,0 +1,236 @@
+.dark-mode .landing-content-goals__title,
+.dark-mode .landing-content-brief__description {
+	color: #ffffff !important;
+	opacity: 0.95;
+}
+
+.landing-page {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.light-mode__bright-block {
+	background-color: #f8f9fa !important;
+}
+
+.dark-mode__bright-block {
+	background-color: #1e1e1e !important;
+}
+
+.landing-page,
+.light-mode .landing-page {
+	background-color: #ffffff;
+	color: #1e1e1e;
+}
+
+.dark-mode .landing-page {
+	background-color: #121212;
+	color: #f0f0f0;
+}
+
+.landing-content-brief {
+	position: relative;
+	padding: 80px 20px;
+	text-align: center;
+	overflow: hidden;
+}
+
+.landing-content-brief__background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0.15;
+	z-index: 0;
+}
+
+.landing-content-brief__title {
+	position: relative;
+	z-index: 1;
+	margin-bottom: 24px;
+}
+
+.landing-content-brief__title h3 {
+	font-size: 2.5rem;
+	font-weight: 800;
+	color: #5865f2;
+	margin: 0;
+}
+
+.landing-content-brief__description {
+	position: relative;
+	z-index: 1;
+	max-width: 700px;
+	margin: 0 auto;
+	font-size: 1.2rem;
+	line-height: 1.6;
+	opacity: 0.9;
+}
+
+.landing-content-goals {
+	padding: 60px 20px;
+	margin: 0;
+}
+
+.landing-content-goals__title {
+	max-width: 800px;
+	margin: 0 auto;
+	font-size: 1.3rem;
+	line-height: 1.7;
+	text-align: center;
+	opacity: 0.95;
+}
+
+.landing-content-functions {
+	padding: 80px 20px 60px;
+}
+
+.landing-content-functions-title {
+	text-align: center;
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 60px;
+	color: #5865f2;
+}
+
+.landing-content-functions-item {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+	max-width: 1000px;
+	margin: 0 auto 70px;
+}
+
+.landing-content-functions-item_reversed {
+	flex-direction: row-reverse;
+}
+
+.landing-content-functions-preview {
+	flex: 0 0 300px;
+	height: 220px;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.landing-content-functions-preview__img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: all 0.3s ease;
+}
+
+.landing-content-functions-preview__img:hover {
+	transform: scale(1.03);
+}
+
+.landing-content-functions-item-description {
+	flex: 1;
+	max-width: 600px;
+}
+
+.landing-content-functions-item__title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-bottom: 16px;
+	color: #5865f2;
+}
+
+.landing-content-functions-item__text {
+	font-size: 1.05rem;
+	line-height: 1.65;
+	opacity: 0.9;
+}
+
+.landing-content-functions-ending {
+	text-align: center;
+	font-size: 1.4rem;
+	font-weight: 700;
+	margin-top: 40px;
+	color: #5865f2;
+	opacity: 0.9;
+}
+
+.landing-footer {
+	padding: 24px;
+	text-align: center;
+	margin-top: auto;
+}
+
+.light-mode .landing-footer {
+	background-color: #f8f9fa;
+	border-top: 1px solid #e0e0e0;
+	color: #1e1e1e;
+}
+
+.dark-mode .landing-footer {
+	background-color: #1e1e1e;
+	border-top: 1px solid #333333;
+	color: #f0f0f0;
+}
+
+.landing-footer-copyrights {
+	font-size: 0.95rem;
+	opacity: 0.7;
+	margin-bottom: 8px;
+}
+
+.landing-footer-logo {
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: #f0f0f0;
+	opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+	.landing-content-functions-item {
+		flex-direction: column !important;
+		text-align: center;
+		gap: 24px;
+	}
+
+	.landing-content-functions-preview {
+		flex: none;
+		width: 100%;
+		max-width: 350px;
+		margin: 0 auto;
+	}
+
+	.landing-content-brief__title h3 {
+		font-size: 2rem;
+	}
+
+	.landing-content-brief__description {
+		font-size: 1.05rem;
+	}
+
+	.landing-content-functions-title {
+		font-size: 1.7rem;
+	}
+}
+
+@media (max-width: 500px) {
+	.landing-content-brief {
+		padding: 50px 16px;
+	}
+
+	.landing-content-brief__title h3 {
+		font-size: 1.7rem;
+	}
+
+	.landing-content-functions-item__title {
+		font-size: 1.3rem;
+	}
+
+	.landing-content-functions-item__text {
+		font-size: 1rem;
+	}
+
+	.landing-content-functions-ending {
+		font-size: 1.2rem;
+	}
+}
